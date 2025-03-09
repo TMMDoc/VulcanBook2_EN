@@ -1,0 +1,81 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_position_diode">Position diode</a></li>
+<li><a href="#_nozzle_center">Nozzle center</a></li>
+<li><a href="#_manual">Manual</a></li>
+<li><a href="#_2_point_edge_detection">2-point edge detection</a></li>
+<li><a href="#_3_point_edge_detection">3-point edge detection</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The machine could determine the work offset in multiple ways.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/WO.png" alt="WO"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_position_diode">Position diode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The most common way is to jog the green laser pointer to the desired position and press the "Set" button. The machine will use it as the work offset.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nozzle_center">Nozzle center</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Especially in the situation when the machine already positioned the nozzle to the zero point this option might be useful. The machine will use the nozzle center as the work offset.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manual">Manual</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In special operations or if you work with fixtures this option will give you a possibility to set the work offset manually.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_point_edge_detection">2-point edge detection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This option is useful when you need to set the work offset on the edge of the material. The machine will ask you to jog the nozzle to the first point and automatically determine the corner of the sheet. This funciton is fast and geared to small parts to be placed on one corner of the sheet.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The accuracy of the 2-point strategy is limited by the accuracy of the machine and therefore not to be used on a full sheet to be cut.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/2pt.png" alt="2pt"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_point_edge_detection">3-point edge detection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The 3 point method is much more accurate and takes 3 measurement points on a full sheet. It assumes we have a full sheet (&gt;1000x2000) on the table and does three corner searches at x300, x1500 and y300 to find the zero point. It is the preferred method to cut a full sheet.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/3pt.png" alt="3pt"></span></p>
+</div>
+<div class="paragraph">
+<p>ATTENTION: if the edge detection is performed on top of a slat it will produce inaccurae results. Therefore the machine picks automatically a position betwee two slats.</p>
+</div>
+</div>
+</div>

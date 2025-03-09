@@ -1,0 +1,29 @@
+<div class="paragraph">
+<p>This page displays the state of the PLC keys. When the user clicks a PLC key, the UI will be updated based on the acknowledgement from PLC. The PLC keys are assigned fixed text numbers. Numbers 2800-2899 and 2900-2999 are reserved for this purpose.</p>
+</div>
+<div class="paragraph">
+<div class="title">Example Key assignments to text numbers:</div>
+<p>Key0 (first button) 2800,2900<br>
+Key1 (second button) 2801,2901</p>
+</div>
+<div class="paragraph">
+<p>If both texts are present in the text file, the key is available as a switch. If only the first text number is present in the text file (e.g. 2801, but not 2901), the key is available as a button. In data block 1 in the PLC, the HMI signals whether a button or switch was pressed.</p>
+</div>
+<div class="paragraph">
+<p>The following rules apply:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For a button (only one text is defined, the second text is missing), the status is displayed as pressed (1) and not (0).</p>
+</li>
+<li>
+<p>For a switch (both texts are defined), the status is not displayed as pressed and not pressed. Instead, the relevant bit is toggled accordingly each time you press and release the switch</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/controls.png" alt="Controls page">
+</div>
+</div>

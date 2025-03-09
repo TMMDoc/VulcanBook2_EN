@@ -1,0 +1,49 @@
+<div class="paragraph">
+<p>The protective glass monitoring is a system that monitors the condition of the protective glass. I could prevent you to produce parts of low quality or even damage the machine. T</p>
+</div>
+<div class="paragraph">
+<p>The behavior is defined as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When Quality value of the protective glass&lt; error level during cutting:
+Machine processing will stop and beam off and then pop out a window at the front of the HMI.</p>
+</li>
+<li>
+<p>If clickthe“Close” button of the window, then the machine will continue cutting the current whole sheet, then before process next sheet it will do a protective glass measurement then if the quality is lower than error level, it will pop out this window again. Click
+“Close” and process again then at the end of the sheet it will pop out this window again.</p>
+</li>
+<li>
+<p>If theglass is contaminated at the beginning then after cutting the first contour, processing will
+stop and do a protective glass measurement then if the quality is lower than error level, it will pop out a
+window. If click the “Close” button of the window, then the machine will continue cutting the current
+whole sheet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There is a offline measurement and a online measurement possible:</p>
+</div>
+<div class="paragraph">
+<p><strong>offline</strong>:  the Offline measurement will be done in the following cases</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start of the first program after the machine power ON equivalent to "Laser Standby" button pressed.</p>
+</li>
+<li>
+<p>During online measurement, if found glass contaminated or contamination possible then will do it at the start of every program until the glass is Clean</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>online</strong>: tbed</p>
+</div>
+<div class="paragraph">
+<p>The parametrization is done in the setting page:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/protective.png" alt="protective"></span></p>
+</div>

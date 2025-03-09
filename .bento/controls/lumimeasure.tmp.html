@@ -1,0 +1,87 @@
+<div class="paragraph">
+<p>By activating this program, it helps to check the contamination of protective window. User can
+know the status by monitoring in protective glass condition. If condition is “Clean”, protective
+window status is good to proceed with cutting in terms of good cutting results. If condition is
+“Contaminated”, protective window status is poor and its advisable to change the protective window
+to experience good cutting results.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/lumi0.png" alt="lumi0"></span></p>
+</div>
+<div class="paragraph">
+<p>Depending on the result of quality value percentage, clean or replace the protective glass.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>80%-90% &#8594; clean<br></p>
+</li>
+<li>
+<p>&lt; 80% &#8594; replace</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/LumiMeasure.png" alt="LumiMeasure" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>With the above entries, X and Y axis moves towards the positioned value.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/LumiError.png" alt="LumiError" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Running the program will follow the data of frequency and duty as per the user requirement. Power
+parameter is pre-defined as step up of  500W, 1000W and 1500W.</p>
+</div>
+<div class="paragraph">
+<p>Focus diameter, Focus distance and dwell time also has been modified according to the user
+requirements. Entered values can be monitored when the program runs. Dwell time specified will
+hold the program until the dwell time configured and then abort.</p>
+</div>
+<div class="paragraph">
+<p>Measure mode has offline and reference data. In offline selection, user can run the program and
+check the status of protective window. In reference selection, user can cross verify the data and
+values of quality and linearity and it can be saved using save option. Generally, reference
+selection will be opted when the protective window is newer which gives fine set of results.</p>
+</div>
+<div class="paragraph">
+<p>When lumi measure program runs, it takes the log of the data and it can be read in
+<strong>LumiMeasurelog.txt</strong> from the path
+'C:\ProgramData\Metamation\Vulcan\Log\Currentyear\Currentmonth\Currentday' or in the UI.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/lumi1.png" alt="t" width="300"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/lumi2.png" alt="lumi2"></span></p>
+</div>
+<div class="paragraph">
+<p>With reference to the above calculation, the following parameters will be added in the MK file to optimize the monitoring function:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Offline broken factor</p>
+</li>
+<li>
+<p>Online broken factor</p>
+</li>
+<li>
+<p>Warning limit in percentage</p>
+</li>
+<li>
+<p>Error limit in percentage</p>
+</li>
+<li>
+<p>Delay time in secs to report warning</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/lumi3.png" alt="lumi3"></span></p>
+</div>

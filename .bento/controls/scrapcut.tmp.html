@@ -1,0 +1,60 @@
+<div class="paragraph">
+<p>Scrap cut function is used to cut the remaining unused area of the sheet manually.</p>
+</div>
+<div class="paragraph">
+<p>By activating this program, it asks to enter the length of the cut X or Y-axis. So, it will start the cut from where the cutting head is present to the value entered in the X or Y-axis. User can also select the required technology table and offset mode of operation.</p>
+</div>
+<div class="paragraph">
+<p>Height freeze distance will control the freeze of height control. The distance before which the freezing is to be active must be entered within the range of 1-10 mm. So, initialize within 10 mm. The operator can vary it depending on the requirement.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ScrapCut.png" alt="ScrapCut" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Procedure:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use nozzle centre/ pilot diode for capturing work offset
+(Select corner of the sheet with 5mm tolerance).</p>
+</li>
+<li>
+<p>Run the program.</p>
+</li>
+<li>
+<p>According to the height freeze distance of 10 mm, it will freeze the height control from the work offset. i.e., it will freeze from the distance of 5mm inside and 5mm outside in a total of 10mm distance. Once the 10mm freeze distance is completed, it will beam on from outside 5mm and get inside in a laser flow until the length of cut is configured.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Added the option to perform the auto edge detect, to find the exact edge of the sheet and then start the scrap cutting:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ScrapCut1.png" alt="ScrapCut1" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>If selected <strong>No</strong>, program will continue with the current position.</p>
+</div>
+<div class="paragraph">
+<p>If selected <strong>Yes</strong>, edge detection will be done from the current position by moving in the opposite direction for 20 mm.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If able to find the edge within this distance, then will adjust the current position and start the cutting.</p>
+</li>
+<li>
+<p>If not able to find the edge within this distance, then the program will be aborted with the following message:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/ScrapCutError.png" alt="ScrapCutError" width="500">
+</div>
+</div>

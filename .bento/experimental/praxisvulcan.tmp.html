@@ -1,0 +1,140 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_loading_programs_into_vulcan">Loading Programs into Vulcan</a></li>
+<li><a href="#_removing_programs_from_the_queue">Removing programs from the queue</a></li>
+<li><a href="#_running_programs">Running Programs</a></li>
+<li><a href="#_editing_programs">Editing Programs</a></li>
+<li><a href="#_ltt_synchronization">LTT synchronization</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://tmmdoc.github.io/Videos/VulcanPraxis.mp4">Video</a></p>
+</div>
+<div class="paragraph">
+<p>The Praxis-Vulcan connection allows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Programs page in Vulcan displays layouts from Praxis’ production queue.</p>
+</li>
+<li>
+<p>Operators can edit these layouts and save them back to Praxis.</p>
+</li>
+<li>
+<p>Operators can run the programs. The run progress is reported back and is reflected in Praxis.</p>
+</li>
+<li>
+<p>Operators can Add/Remove/Update LTT pages in Vulcan and push the updates to Praxis enabled Flux stations.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loading_programs_into_vulcan">Loading Programs into Vulcan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Launch Praxis and Vulcan. Switch to Praxis and import Job spreadsheets from the C:\Program Files\Metamation\Praxis\Samples\Jobs folder. (Or load some parts and create new Job from the part library).
+Select a job, right click, and use the Plan Job panel command. Select a bend machine.
+Repeat Plan Job (previous step) and select Proteck Dual Head machine from the menu</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV1.png" alt="PV1"></span></p>
+</div>
+<div class="paragraph">
+<p>Nests start appearing after a few seconds. Right click and use Send to Machine… command to send the layouts to Vulcan.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV2.png" alt="PV2"></span></p>
+</div>
+<div class="paragraph">
+<p>Launch Vulcan and switch to Programs page. It lists programs to run in Proteck Dual Head queue. The program tiles display job details like sheets to run, estimated machine-time-per-sheet, Praxis raw-materials etc.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV3.png" alt="PV3"></span></p>
+</div>
+<div class="paragraph">
+<p>The program list is updated as layouts are sent/recalled from Praxis. Programs are automatically refreshed when layouts are edited in Praxis.
+Use the search box to search the programs by name, raw-material or LTT table. The examples below show results of programs searched by 1. raw-material and 2. LTT.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV4.png" alt="PV4"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_removing_programs_from_the_queue">Removing programs from the queue</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Switch to Praxis Job page or go to the nests tab.
+Select one or more layouts, right click, and use the Recall from Machine… panel command to remove the layouts from the production queue.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV5.png" alt="PV5"></span></p>
+</div>
+<div class="paragraph">
+<p>The Vulcan program list is automatically updated with the updated queue.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_programs">Running Programs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select a program and use the run command to load the program for running.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV6.png" alt="PV6"></span></p>
+</div>
+<div class="paragraph">
+<p>Praxis Job and Part statuses are updated to reflect the parts-in-progress. The Layout is checked-out to prevent updates while program is loaded on the machine.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV7.png" alt="PV7"></span></p>
+</div>
+<div class="paragraph">
+<p>Press the stop[1] button on the run page to mark the current sheet as complete.  The job is updated with the completion status. Repeat this to mark all sheets as completed. Once completed program is unloaded and it is removed from the machine production queue and the job/part/layout statuses are updated in Praxis.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV8.png" alt="PV8"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_editing_programs">Editing Programs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Select a Program in the programs list and use edit command to edit the program. The layout is checkout from the Praxis and is locked for editing. Update the program in Vulcan and press on done button to save the changes back to Praxis. Praxis checks the layout for validation errors and adds it back to the production queue if everything is OK.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ltt_synchronization">LTT synchronization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When linked to Praxis, the same LTT is used in Vulcan, Praxis and Flux. Vulcan becomes the LTT master and owns the technology tables. All edits made at Vulcan are pushed to all Praxis + Flux stations on the network. Illustration:</p>
+</div>
+<div class="paragraph">
+<p>Switch to the Configure page and click on the Laser Database button.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV9.png" alt="PV9"></span></p>
+</div>
+<div class="paragraph">
+<p>Open Praxis or Flux to confirm the existing laser data.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV10.png" alt="PV10"></span></p>
+</div>
+<div class="paragraph">
+<p>Open the page lists again in Praxis/Flux. The cloned page should be listed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/PV11.png" alt="PV11"></span></p>
+</div>
+</div>
+</div>

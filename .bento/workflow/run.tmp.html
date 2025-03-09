@@ -1,0 +1,157 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_program_selector">Program selector</a></li>
+<li><a href="#_speed_override">Speed override</a></li>
+<li><a href="#_display">Display</a></li>
+<li><a href="#_status">Status</a></li>
+<li><a href="#laser">Program controls</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_program_selector">Program selector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Selecting the program and pressing the RUN Key navigates the user to the run tab. The program name, dimension, NCR status, and laser parameters (axes details, speed, gas pressure, power, gas type, nozzle height, focal distance, current work coordinate system, tool coordinate system, M function used) are shown at the top.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Start :</strong> Starts the program.</p>
+</li>
+<li>
+<p><strong>Pause :</strong> Pause the program. This option is only available when the user starts the program.</p>
+</li>
+<li>
+<p><strong>Continue :</strong> Continues the paused program.</p>
+</li>
+<li>
+<p><strong>Stop or Abort :</strong> Stops the program.</p>
+</li>
+<li>
+<p><strong>Edit :</strong> Edits the program. It navigates to the program&#8217;s edit page which was mentioned earlier.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image51.jpeg" alt="Run page" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>LST/layout program displays as below:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mainLst.png" alt="mainLst"></span></p>
+</div>
+<div class="paragraph">
+<p>DIN program displays as below,</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/mainDIN.png" alt="mainDIN"></span></p>
+</div>
+<div class="paragraph">
+<p>Most of the information is self-explanatory. The parameter on the right side of the screen shows the following information:</p>
+</div>
+<div class="paragraph">
+<p><strong>S:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>T:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>M:</strong> Active M-Function</p>
+</div>
+<div class="paragraph">
+<p>In case the offline programming outputs a program run time it will be additionally displayed in the main screen.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/main.png" alt="main"></span></p>
+</div>
+<div class="paragraph">
+<p>Running time (NetProcessingTime)
+Estimate time (Refer to the data from Offline programming)</p>
+</div>
+<div class="paragraph">
+<p>The time information be updated for current active signal program.
+Once a program starts, the time calculation starts, and it will be reset while a new program starts.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_speed_override">Speed override</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The user can use the Override + and Override - to influence the speed of axes movements (in percent).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image54.jpg" alt="Speed override window" width="200">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Override + :</strong> Increase override percentage for the configured/set axis or path speed. Above 10%, the value is changed in 10% increments; below 10%, it is changed in 1% increments.</p>
+</li>
+<li>
+<p><strong>Override – :</strong> Reduce override percentage for the configured/set axis or path speed. Above 10%, the value is changed in 10% decrements; below 10%, it is changed in 1% decrements.
+The user can also use the slider to increase or decrease the speed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>User can navigate between different tabs while the machine is running:</strong></p>
+</div>
+<div class="paragraph">
+<p>It is possible for the user to move out of “Run” page even while the machine is busy cutting the sheet. This is necessary because, while a program is running, the operator might want to get ready with the next set of programs (edit program, change laser parameters etc) for production. Additionally, when the user switch tabs while program is running, a mini player is displayed for him/her to know the current state of program being cut, without moving to “Run” tab</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image55.jpeg" alt="Program running at the bottom" width="750">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_display">Display</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>User can turn ON or OFF the sheet, machine and traverse display in the drawing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image56.jpeg" alt="Display window" width="750">
+</div>
+</div>
+<div class="paragraph">
+<p>PLC static messages are displayed at the bottom left corner in RUN page</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_status">Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>User can check the information of program and machine status. It&#8217;s a read only type.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image57.jpeg" alt="Program information window" width="750">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="laser">Program controls</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>User can control the program by choosing the required option when program is in RUN state. Options chosen in program controls will be displayed in bottom left corner.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image58.jpeg" alt="program controls window">
+</div>
+</div>
+</div>
+</div>

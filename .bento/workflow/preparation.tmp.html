@@ -1,0 +1,269 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_steps_after_switching_the_machine_on">Steps after switching the machine on</a>
+<ul class="sectlevel2">
+<li><a href="#_unlocking_the_emergency_stop_pushbutton">Unlocking the EMERGENCY STOP pushbutton</a></li>
+<li><a href="#_close_the_door">Close the door</a></li>
+<li><a href="#_switch_on_the_drives">Switch on the drives</a></li>
+<li><a href="#_homing_the_axis">Homing the Axis</a></li>
+<li><a href="#_switch_on_the_laser">Switch on the laser</a></li>
+<li><a href="#_calibrating_the_height_control_nozzle_centering">Calibrating the height control, Nozzle centering</a></li>
+<li><a href="#_clear_the_error_messages">clear the error messages</a></li>
+</ul>
+</li>
+<li><a href="#_switching_the_machine_off">Switching the machine off</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is the process to prepare the machine for operation. For detail please refer to the operation manual.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/panel.png" alt="panel"></span></p>
+</div>
+<div class="paragraph">
+<p>The panel consists of the following components:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Display</p>
+</li>
+<li>
+<p>Emergency stop</p>
+</li>
+<li>
+<p>Laser tst mode</p>
+</li>
+<li>
+<p>Drive enable key</p>
+</li>
+<li>
+<p>Laser enable</p>
+</li>
+<li>
+<p>Door switch</p>
+</li>
+<li>
+<p>Override</p>
+</li>
+<li>
+<p>USB port</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Operating element</th>
+<th class="tableblock halign-left valign-top">Requirements</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w1.png" alt="w1"></span> "EMERGENCY STOP" push-button-Push-button:</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">■ The power supply to the entire system is disconnected (the
+24 V control voltage is maintained).
+ − All axis motions stop.
+ − All drives are switched off electrically.
+ ■ The processing is interrupted:
+ − The laser beam is switched off.
+ − The beam block is closed.
+ − The gas supply of the cutting gas is interrupted.
+ − An active processing program is aborted and needs to be
+restarted, if required.
+ − The machine&#8217;s home position has to be approached.
+ − The reference points of the axes are retained.
+ ■ The hydraulic unit, the compact dust extractor and the length
+wise and/or transverse conveyor, respectively, are switched off.
+ ■ All pneumatic movements are stopped or transferred to a dan
+ger-free state. The compressed air supply remains unaffected.
+ ■ Vacuum remains.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w2.png" alt="w2"></span> "Machine On/Off"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For switching on:
+ ■ The button flashes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches the machine On.
+ ■ Lights up when the machine is ready for operation.
+ Switches the machine Off.
+ ■ Goes out when machine switched off.
+ Machine Off is also triggered by:
+ ■ "EMERGENCY STOP" push-button.
+ ■ Errors which trigger an "EMERGENCY STOP"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w3.png" alt="w3"></span> "Laser test"</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is lit if the machine is in test mode.
+ The selected processing program will run without the laser beam
+being ignited.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w4.png" alt="w4"></span> "Laser On/Off"</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starts the automatic switch-on cycle of the laser:
+ ■ Flashes while the switch-on cycle is being carried out.
+ ■ Is lit if the laser is ready for operation.
+ Starts the automatic switch-off cycle of the laser:
+ ■ Flashes while the switch-off cycle is being carried out.
+ ■ Goes out when machine switched off.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w5.png" alt="w5"></span> "Door unlocking "</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Safety door is unlocked and can be opened.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w6.png" alt="w6"></span>  Status display: "Safety light barrier interrupted"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"EMERGENCY STOP" is not active. No "Feed hold" is active.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flashes when the safety light barrier which shields the pallet
+changer is interrupted.
+ Reactivate safety light barrier: Press "Acknowledge safety light bar
+rier" foot switch on the start post. Then press "Start" button on the
+control panel.
+ Continue the paused movements of the pallet changer: press
+"Start"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w7.png" alt="w7"></span>  Feedrate potentiometer"</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the travel speed of the X and Y axes between 4 and
+120%:
+ ■ In the Production core operation, the travel regulation is 4-100
+m/min.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w8.png" alt="w8"></span> "Navigation keys"</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moves the selected NC axes in the (+) or (-) direction.
+ ■ Moves the axes in the +/- direction.
+ ■ The plus/minus buttons increase/reduce the value of "Manual
+functions" with the symbol ±.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w9.png" alt="w9"></span>  "Reset" ("Stop")</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes active fault messages.
+ Cancels an active program.
+ The reference points are maintained.
+ The home position might be lost.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w10.png" alt="w10"></span> "Feed hold" ("Pause")</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lights up if "FEED HOLD" is triggered.
+ ■ All axis motions stop.
+ ■ The processing is interrupted:
+ − The laser beam is switched off.
+ − The beam block is closed.
+ − The gas supply of the cutting gas is interrupted.
+ − An active processing program is paused and can be fur
+ther executed by acknowledging.
+ ■ The hydraulic unit, the compact dust extractor and the length
+wise and/or transverse conveyor, respectively, are switched off.
+ ■ All pneumatic movements are stopped or transferred to a dan
+ger-free state. The compressed air supply remains unaffected.
+ ■ Vacuum remains.
+ To acknowledge any "feed hold": press "Acknowledge feed hold".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w11.png" alt="w11"></span> "Acknowledging feed stop" ("Feed start")</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No errors present. The safety light barrier is acknowl
+edged.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flashes if an error is present or a "FEED HOLD" has been trig
+gered (for example, by interrupting the safety light barrier).
+ Acknowledges active error.
+ Acknowledge "FEED HOLD".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="img/w12.png" alt="w12"></span> "Start" ("Program start")</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No errors present. Machine is ready to operate.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The "Start" button has the following functions depending on the
+core operation selected:
+ ■ If the Setup core operation is selected: the machine moves to
+the home position without starting to execute the order list or
+the selected processing program.
+ ■ In all other core operations: the machine moves to the home
+position and starts executing the order list.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_steps_after_switching_the_machine_on">Steps after switching the machine on</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_unlocking_the_emergency_stop_pushbutton">Unlocking the EMERGENCY STOP pushbutton</h3>
+<div class="paragraph">
+<p>EMERGENCY STOP push buttons are located on the operating panel of the laser processing machine and on the safety post of the pallet changer.
+To release the EMERGENCY STOP push-button, press it in and turn it in clockwise direction.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_close_the_door">Close the door</h3>
+<div class="paragraph">
+<p>use the door switch</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_switch_on_the_drives">Switch on the drives</h3>
+<div class="paragraph">
+<p>use the drive enable key</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_homing_the_axis">Homing the Axis</h3>
+<div class="paragraph">
+<p>When the machine is switched on, the axes must be homed. This is done by pressing the HOME &gt; Automatic key in the HMI interface. The axes are then moved to the reference point.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_switch_on_the_laser">Switch on the laser</h3>
+<div class="paragraph">
+<p>lorem</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_calibrating_the_height_control_nozzle_centering">Calibrating the height control, Nozzle centering</h3>
+<div class="paragraph">
+<p>please refer to the respective sections in the operation manual.</p>
+</div>
+<div class="paragraph">
+<p><a href="..\Controls\HeightSensorCal.html">Height Sensor Calibration</a></p>
+</div>
+<div class="paragraph">
+<p><a href="..\Controls\NozzleCentre.html">Nozzle Centering</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clear_the_error_messages">clear the error messages</h3>
+<div class="paragraph">
+<p>Whenever there is a message from PLC, it will be displayed in bottom left corner. The user can view the messages.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/image67.jpeg" alt="PLC static messages" width="350">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_switching_the_machine_off">Switching the machine off</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Please shout down the HMI before switch off the system power supply to prevent a possible loss of data.</p>
+</div>
+</div>
+</div>

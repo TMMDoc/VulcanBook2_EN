@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Focal Distance</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.png" width="200" height="78" /></div>
+        <div><p>Vulcan Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../index.html">Welcome to Vulcan</a></li>
+    <li><button class="tree blank"></button><a href="../features.html">Features</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../workflow/index.html">Production Workflow</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../workflow/preparation.html">Preparation </a></li>
+        <li><button class="tree blank"></button><a href="../workflow/setup.html">Setup</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/create.html">Create</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/filemanager.html">Filemanager</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/programs.html">Select program</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/edit.html">Edit NC Code</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/laserfunct.html">Edit Laser Technology</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/layout.html">Edit layout</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/simulation.html">Simulation run</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/offset.html">Work offsets</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/run.html">Run</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/reentry.html">Reentry</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../ltt/index.html">Laser Technology Tables (LTT)</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../ltt/general.html">Terminology</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/overview.html">Laser Data items</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/selection.html">Modifying Laser Data</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/export.html">LTT Management</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/transversal.html">Transversal blow</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/rampcycles.html">Ramp cycles</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/multistage.html">Multistage piercing</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/flycut.html">FlyCut</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/ldm.html">Laser data base</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/advanced.html">Advanced functions</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/cuttingtools.html">Cutting tools</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/dca.html">Dynamic Parameters (DCA)</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../technology/index.html">Technology functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../technology/micro.html">Micro Joints</a></li>
+        <li><button class="tree blank"></button><a href="../technology/nano.html">Nano Joints</a></li>
+        <li><button class="tree blank"></button><a href="../technology/pierceline.html">Pierce Line sensor</a></li>
+        <li><button class="tree blank"></button><a href="../technology/frog.html">Frog jumping</a></li>
+        <li><button class="tree blank"></button><a href="../technology/analoggas.html">Analog gas calibration</a></li>
+        <li><button class="tree blank"></button><a href="../technology/dfc.html">DFC Dynamic focus control </a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="index.html">Control elements</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="lumimeasure.html">Lumi Measure</a></li>
+        <li><button class="tree blank"></button><a href="protective.html">Protective glas monitoring</a></li>
+        <li><button class="tree blank"></button><a href="focuscomb.html">Focus Comb</a></li>
+        <li><button class="tree blank"></button><a class="active" href="focaldistance.html">Focal Distance</a></li>
+        <li><button class="tree blank"></button><a href="nozzlecleaning.html">Nozzle cleaning</a></li>
+        <li><button class="tree blank"></button><a href="scrapcut.html">Scrap Cut</a></li>
+        <li><button class="tree blank"></button><a href="lubricationcycle.html">Lubrication Cycle</a></li>
+        <li><button class="tree blank"></button><a href="sheetorigin.html">Go To Sheet Origin</a></li>
+        <li><button class="tree blank"></button><a href="heightsensorcal.html">Height Sensor Calibration</a></li>
+        <li><button class="tree blank"></button><a href="nozzlecentre.html">Nozzle Centre</a></li>
+        <li><button class="tree blank"></button><a href="targetshot.html">Target Shot</a></li>
+        <li><button class="tree blank"></button><a href="gaspurge.html">Gas Purge</a></li>
+        <li><button class="tree blank"></button><a href="hcmanualset.html">HC Manual Set Point</a></li>
+        <li><button class="tree blank"></button><a href="parkposition.html">Go To Park Position</a></li>
+        <li><button class="tree blank"></button><a href="nozzleclean.html">Nozzle Clean & Height Sensor Calibration</a></li>
+        <li><button class="tree blank"></button><a href="edgedetection.html">Edge Detection</a></li>
+        <li><button class="tree blank"></button><a href="pilotdiodepos.html">Pilot Diode Positioning</a></li>
+        <li><button class="tree blank"></button><a href="gaspressurecalib.html">Gas pressure calibration</a></li>
+        <li><button class="tree blank"></button><a href="remainder.html">Remainder sheet cut</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../productionp/index.html">Production plan</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../productionp/create.html">Create a production plan</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/lock.html">Modification</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/run.html">Run a production plan</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/sequence.html">Running sequence</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/loading.html">sheet loading</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/material.html">Material stock</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../advanced/index.html">Advanced functionality</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/increaseaccuracy.html">Increase Accuracy</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/automationinterface.html">Automation Interface</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/suctionlayout.html">Suction cup layout</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/vaporize.html">Vaporize sheet</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/adaptiveoptics.html">Specialized Laser funcitions</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../programmingmanual/index.html">Programming manual</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../programmingmanual/din/index.html">DIN Programming</a></li>
+        <li><button class="tree blank"></button><a href="../programmingmanual/lst/index.html">LST Programming</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../configure/index.html">Machine configuration</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../configure/laser/index.html">Laser database</a></li>
+        <li><button class="tree blank"></button><a href="../configure/offset.html">Work offsets</a></li>
+        <li><button class="tree blank"></button><a href="../configure/setting.html">Machine settings</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../experimental/index.html">Experimental features</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../experimental/nozzlecentering.html">Nozzle Centering</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/automatedfocuscomb.html">Automated Focus Comb</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/highpoweroptions.html">High Power Options</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/praxisvulcan.html">Direct connection to Praxis</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../serviceinformation/index.html">Service settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../serviceinformation/setting/index.html">General settings</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../serviceinformation/setting/logfiles.html">Log files</a></li>
+            <li><button class="tree blank"></button><a href="../serviceinformation/setting/backup.html">Backup settings</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/pilotlaser.html">Calibration of the pilot laser</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/servicemode.html">Service settings</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/servkl59.html">PLC functions for service's maintenance/ repair work for KL59</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/palletchanger.html">Pallet changer settings</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/dca.html">DCA settings</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/miniplayer.html">Info messages</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../troubleshooting/index.html">Troubleshooting</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../troubleshooting/installation/index.html">Installation</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/workoffset.html">Work offset</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/diagnostics.html">Error data, backup, restore</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/collisions.html">Frequent collisions</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/laserissues.html">Laser issues</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/extremesmall.html">extreme small contours</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="index.html">Control elements</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="focaldistance.html">Focal Distance</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Focal Distance</h1>
+<div class="paragraph">
+<p>By activating this program, it helps to check the focal distance manually. It asks to enter focus diameter and focus distance. User can also monitor the active focus diameter and distance.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/focaldistance.png" alt="FocalDistance" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>Entered amount of focus distance will be displayed as below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/focaldistance1.png" alt="FocalDistance1" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>If Focus diameter is selected as “150um”, Focus shift value is predefined as “2.5mm”, Focus distance will revert back to “2.5mm” when program gets aborted.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/focaldistance2.png" alt="FocalDistance2" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p>If Focus diameter is selected as “210um”, Focus shift value is predefined as “0mm”, Focus distance will revert back to “0mm” when program gets aborted.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/focaldistance3.png" alt="FocalDistance3" width="300">
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc"></aside>
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="focuscomb.html">Focus Comb</a></span>
+  <span class="next"><a href="nozzlecleaning.html">Nozzle cleaning</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2024 by Trumpf-Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

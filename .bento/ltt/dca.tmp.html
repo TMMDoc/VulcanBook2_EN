@@ -1,0 +1,21 @@
+<div class="paragraph">
+<p>In original DIN format cutting program, the DCA relevant settings are defined in cutting parameter page.</p>
+</div>
+<div class="paragraph">
+<p>For the Trumpf LTT, display the DCA page with 2 sets of parameter DCA 0 &amp; DCA 1. The Acc/Dec for the cutting will be initialized with the DCA1 parameter. But during cutting will be taken from the Trumpf LTT based on the TC_LASER_ON method</p>
+</div>
+<div class="paragraph">
+<p>The following 5 parameters are responsible to achieve a good contours accuracy of cutting and can be
+changed dynamically depends on the requirement:
+. Path Acceleration
+. Path Ramp time (Jerk)
+. Contour tolerance
+. Lookahead threshold angle
+. Path jerk limit factor</p>
+</div>
+<div class="paragraph">
+<p>All parameters were optimized by Trumpf and should not be changed without Trumpf approval. Please only change the acclearation values in the tech tables to increase your accuracy especially for very small and delicate contours.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/DCA_LTT.png" alt="DCA LTT"></span></p>
+</div>

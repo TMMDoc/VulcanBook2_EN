@@ -1,0 +1,91 @@
+<div class="paragraph">
+<p><strong>Edge Detection</strong> function is to calculate the origin point and rotation angle of the sheet.</p>
+</div>
+<div class="paragraph">
+<p>According to the rotation of the sheet, it is required to rotate the XY-plane of the program such that the jobs are fitted into the rotated sheet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">Syntax: G17 D=Sheet Rotation</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To enable this function, navigate to <strong>Configure &#8594; Machine settings &#8594; PLC options &#8594; Function Parameters</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Enable <strong>Activate sheet edge function</strong> from <strong>Machine Miscellaneous Control</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/SheetEdgeFunction.png" alt="SheetEdgeFunction">
+</div>
+</div>
+<div class="paragraph">
+<p>It is also possible to manually program the Edge Detection function.</p>
+</div>
+<div class="paragraph">
+<p>Switch to <strong>Controls</strong> page to select the <strong>Edge detection</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/EdgeDetect.png" alt="EdgeDetect" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>By selecting <strong>Edge detection</strong> program, Operator must enter the sheet length of X and Y axis to detect the edges.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/EdgeProgramActive.png" alt="EdgeProgramActive" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>For the current automatic edge detection function (three-point edge-seeking), operator needs to accurately enter the size of the sheet, and the cutting head needs to be precisely located near the corner of the sheet at the same time. Or else the edge detection may fail.</p>
+</div>
+<div class="paragraph">
+<p>After the running the edge detection function, the program will go to the origin point and move the Z-axis down to the corner and wait for the acknowledgement of the operator to the start the program.</p>
+</div>
+<div class="paragraph">
+<p>To enable this function, navigate to <strong>Configure &#8594; Machine settings &#8594; PLC options &#8594; Control Parameters</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/MachineSettings.png" alt="MachineSettings" width="400">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="img/EdgeDetectProgram.png" alt="EdgeDetectProgram">
+</div>
+</div>
+<div class="paragraph">
+<p>Select the <strong>Acknowledge the sheet origin point</strong> checkbox.</p>
+</div>
+<div class="olist arabic">
+<div class="title">With this option selected (same as current behavior):</div>
+<ol class="arabic">
+<li>
+<p>Head move to origin point</p>
+</li>
+<li>
+<p>Move the Z-axis to down position</p>
+</li>
+<li>
+<p>Wait for operator to acknowledge by cycle start</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Without this option selected:</div>
+<ol class="arabic">
+<li>
+<p>Pilot diode will be moved to origin point</p>
+</li>
+<li>
+<p>Program will be Dwell for 3 secs</p>
+</li>
+<li>
+<p>Program start to continue.</p>
+</li>
+</ol>
+</div>

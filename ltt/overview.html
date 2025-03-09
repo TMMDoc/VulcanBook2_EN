@@ -1,0 +1,543 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Condensed:wght@400;600&family=Nunito+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Roboto+Mono:ital,wght@0,400;0,600;1,400;1,600&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="../res/bento.css">
+  <link rel="stylesheet" href="../res/site.css">
+  <link rel="stylesheet" href="../res/tree.css">
+  <link rel="stylesheet" href="../res/sibling.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Laser Data items</title>
+</head>
+<body id="site-body" onload="sLoaded()">
+    <header id="site-header">
+        <div id="header-logo"><img src="../img/logo.png" width="200" height="78" /></div>
+        <div><p>Vulcan Reference Manual</p></div>
+    </header>
+    <div id="site-main">
+        <nav id="site-nav">
+            <div class="treesite">
+  <ul>
+    <li><button class="tree blank"></button><a href="../index.html">Welcome to Vulcan</a></li>
+    <li><button class="tree blank"></button><a href="../features.html">Features</a></li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../workflow/index.html">Production Workflow</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../workflow/preparation.html">Preparation </a></li>
+        <li><button class="tree blank"></button><a href="../workflow/setup.html">Setup</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/create.html">Create</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/filemanager.html">Filemanager</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/programs.html">Select program</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/edit.html">Edit NC Code</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/laserfunct.html">Edit Laser Technology</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/layout.html">Edit layout</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/simulation.html">Simulation run</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/offset.html">Work offsets</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/run.html">Run</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/reentry.html">Reentry</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree open"></button>
+      <a href="index.html">Laser Technology Tables (LTT)</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="general.html">Terminology</a></li>
+        <li><button class="tree blank"></button><a class="active" href="overview.html">Laser Data items</a></li>
+        <li><button class="tree blank"></button><a href="selection.html">Modifying Laser Data</a></li>
+        <li><button class="tree blank"></button><a href="export.html">LTT Management</a></li>
+        <li><button class="tree blank"></button><a href="transversal.html">Transversal blow</a></li>
+        <li><button class="tree blank"></button><a href="rampcycles.html">Ramp cycles</a></li>
+        <li><button class="tree blank"></button><a href="multistage.html">Multistage piercing</a></li>
+        <li><button class="tree blank"></button><a href="flycut.html">FlyCut</a></li>
+        <li><button class="tree blank"></button><a href="ldm.html">Laser data base</a></li>
+        <li><button class="tree blank"></button><a href="advanced.html">Advanced functions</a></li>
+        <li><button class="tree blank"></button><a href="cuttingtools.html">Cutting tools</a></li>
+        <li><button class="tree blank"></button><a href="dca.html">Dynamic Parameters (DCA)</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../technology/index.html">Technology functions</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../technology/micro.html">Micro Joints</a></li>
+        <li><button class="tree blank"></button><a href="../technology/nano.html">Nano Joints</a></li>
+        <li><button class="tree blank"></button><a href="../technology/pierceline.html">Pierce Line sensor</a></li>
+        <li><button class="tree blank"></button><a href="../technology/frog.html">Frog jumping</a></li>
+        <li><button class="tree blank"></button><a href="../technology/analoggas.html">Analog gas calibration</a></li>
+        <li><button class="tree blank"></button><a href="../technology/dfc.html">DFC Dynamic focus control </a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../controls/index.html">Control elements</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../controls/lumimeasure.html">Lumi Measure</a></li>
+        <li><button class="tree blank"></button><a href="../controls/protective.html">Protective glas monitoring</a></li>
+        <li><button class="tree blank"></button><a href="../controls/focuscomb.html">Focus Comb</a></li>
+        <li><button class="tree blank"></button><a href="../controls/focaldistance.html">Focal Distance</a></li>
+        <li><button class="tree blank"></button><a href="../controls/nozzlecleaning.html">Nozzle cleaning</a></li>
+        <li><button class="tree blank"></button><a href="../controls/scrapcut.html">Scrap Cut</a></li>
+        <li><button class="tree blank"></button><a href="../controls/lubricationcycle.html">Lubrication Cycle</a></li>
+        <li><button class="tree blank"></button><a href="../controls/sheetorigin.html">Go To Sheet Origin</a></li>
+        <li><button class="tree blank"></button><a href="../controls/heightsensorcal.html">Height Sensor Calibration</a></li>
+        <li><button class="tree blank"></button><a href="../controls/nozzlecentre.html">Nozzle Centre</a></li>
+        <li><button class="tree blank"></button><a href="../controls/targetshot.html">Target Shot</a></li>
+        <li><button class="tree blank"></button><a href="../controls/gaspurge.html">Gas Purge</a></li>
+        <li><button class="tree blank"></button><a href="../controls/hcmanualset.html">HC Manual Set Point</a></li>
+        <li><button class="tree blank"></button><a href="../controls/parkposition.html">Go To Park Position</a></li>
+        <li><button class="tree blank"></button><a href="../controls/nozzleclean.html">Nozzle Clean & Height Sensor Calibration</a></li>
+        <li><button class="tree blank"></button><a href="../controls/edgedetection.html">Edge Detection</a></li>
+        <li><button class="tree blank"></button><a href="../controls/pilotdiodepos.html">Pilot Diode Positioning</a></li>
+        <li><button class="tree blank"></button><a href="../controls/gaspressurecalib.html">Gas pressure calibration</a></li>
+        <li><button class="tree blank"></button><a href="../controls/remainder.html">Remainder sheet cut</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../productionp/index.html">Production plan</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../productionp/create.html">Create a production plan</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/lock.html">Modification</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/run.html">Run a production plan</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/sequence.html">Running sequence</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/loading.html">sheet loading</a></li>
+        <li><button class="tree blank"></button><a href="../productionp/material.html">Material stock</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../advanced/index.html">Advanced functionality</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../advanced/increaseaccuracy.html">Increase Accuracy</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/automationinterface.html">Automation Interface</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/suctionlayout.html">Suction cup layout</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/vaporize.html">Vaporize sheet</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/adaptiveoptics.html">Specialized Laser funcitions</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../programmingmanual/index.html">Programming manual</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../programmingmanual/din/index.html">DIN Programming</a></li>
+        <li><button class="tree blank"></button><a href="../programmingmanual/lst/index.html">LST Programming</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../configure/index.html">Machine configuration</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../configure/laser/index.html">Laser database</a></li>
+        <li><button class="tree blank"></button><a href="../configure/offset.html">Work offsets</a></li>
+        <li><button class="tree blank"></button><a href="../configure/setting.html">Machine settings</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../experimental/index.html">Experimental features</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../experimental/nozzlecentering.html">Nozzle Centering</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/automatedfocuscomb.html">Automated Focus Comb</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/highpoweroptions.html">High Power Options</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/praxisvulcan.html">Direct connection to Praxis</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../serviceinformation/index.html">Service settings</a>
+      <ul class="hide">
+        <li>
+          <button class="tree closed"></button>
+          <a href="../serviceinformation/setting/index.html">General settings</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../serviceinformation/setting/logfiles.html">Log files</a></li>
+            <li><button class="tree blank"></button><a href="../serviceinformation/setting/backup.html">Backup settings</a></li>
+          </ul>
+        </li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/pilotlaser.html">Calibration of the pilot laser</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/servicemode.html">Service settings</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/servkl59.html">PLC functions for service's maintenance/ repair work for KL59</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/palletchanger.html">Pallet changer settings</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/dca.html">DCA settings</a></li>
+        <li><button class="tree blank"></button><a href="../serviceinformation/miniplayer.html">Info messages</a></li>
+      </ul>
+    </li>
+    <li>
+      <button class="tree closed"></button>
+      <a href="../troubleshooting/index.html">Troubleshooting</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../troubleshooting/installation/index.html">Installation</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/workoffset.html">Work offset</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/diagnostics.html">Error data, backup, restore</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/collisions.html">Frequent collisions</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/laserissues.html">Laser issues</a></li>
+        <li><button class="tree blank"></button><a href="../troubleshooting/extremesmall.html">extreme small contours</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+        </nav>
+        <div id="site-nav-right">
+            <nav id="site-crumb">
+  <div>
+    <button>
+      <img src="../res/home.png">
+    </button>
+  </div>
+  <div>
+    <a href="index.html">Laser Technology Tables (LTT)</a>
+  </div>
+  <div>/</div>
+  <div>
+    <a href="overview.html">Laser Data items</a>
+  </div>
+</nav>
+
+            <div id="site-crumb-below">
+                <div id="site-toc-left">
+                    <article id="article">
+                        <h1>Laser Data items</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Trumpf LTT as it has some more advanced control techniques and evolved over 40 years of Trumpf experience. The Trumpf LTT looks as below:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ltt.png" alt="LTT"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_normal_piercing">Normal piercing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>"Normal piercing is optimized for fast, reliable processing.
+The beam remains ignited until the end of the piercing time.</p>
+</div>
+<div class="paragraph">
+<p>Advantages: "Normal piercing" depending on the gas type:
+* Oxygen: Start hole is produced with minimal time delay.
+* Nitrogen: Producing the start hole with nitrogen prevents formation of oxides when starting to cut</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gentle_piercing">Gentle piercing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>"Gentle piercing" usually takes a little longer than normal piercing; however, it delivers better quality piercing results.
+* Defined settings possible in combination with a ramp.
+* Minimal amount of slag or molten metal being thrown up.
+* When cutting small contours in stainless steel, a start hole is produced with a small amount of material. This reduces nozzle wear and the increase process reliability.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multistage_piercing">Multistage piercing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Piercing with up to 3 independent piercing parameter sets. This makes possible pre-treatment and refinishing of the piercing possible, which means, for example that the amount of thrown-up material around the piercing can be greatly reduced.</p>
+</div>
+<div class="paragraph">
+<p>Area of application: material thicknesses from 10 mm in mild steel, stainless steel and aluminum.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pierceline_piercing_sensor">PierceLine piercing sensor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Safety margins have been added to the piercing time in the cutting tables to ensure process reliability. This is necessary above all because the shortest possible piercing time varies depending on the technology, with variation as follows:
+* From piercing to piercing.
+* Depending on the quality of the material.</p>
+</div>
+<div class="paragraph">
+<p>The piercing-end is detected by the piercing sensor, PierceLine, and the piercing process is ended as soon as the material is completely cut through. Thusconsiderably reducing the piercing time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_approach_strategies">Approach strategies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to avoid damage to the contour from piercing, the material is pierced a few millimeters to one side of the contour. The contour is then approached using various strategies depending on the material, the material thickness and the contour size.
+=== Normal approach
+With a normal approach, cutting takes place straight from the start hole with the cutting parameters from the appropriate cutting table.
+=== Reduced approaching
+The contour is approached at a reduced speed. Power, frequency, nozzle distance</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/app1.png" alt="app1"></span></p>
+</div>
+<div class="sect2">
+<h3 id="_approach_with_pre_cut">Approach with pre-cut</h3>
+<div class="paragraph">
+<p>After piercing, a cut of a few millimeters is made at reduced speed, depending on material thickness. The cutting head then returns to the start hole using the last active positioning speed and the contour is then approached and cut with the parameters from the appropriate cutting table.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cooling_after_approach">Cooling after approach</h3>
+<div class="paragraph">
+<p>For "Cooling after approach", the laser beam is switched off briefly after the approach before the actual contour is cut. The cutting gas, however, continues to flow and cools the processing point.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_marking_and_dot_marking">Marking and dot marking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Material parts are marked by a change in color on the material surface. The marking can normally no longer be felt after enameling or painting since only a minimum of material is removed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cutting_procedure">Cutting procedure</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cutting_in_large_medium_and_small_contour">Cutting in Large, Medium and small contour</h3>
+<div class="sect3">
+<h4 id="_contour_sizes">Contour sizes</h4>
+<div class="paragraph">
+<p>In <strong>TRUMPF’s</strong> CNC programming and laser cutting context, the concepts of <strong>large, medium, and small contours</strong> relate to the size and complexity of different geometric features in a cutting or machining process. These distinctions help optimize tool movement, cutting strategies, and processing speed.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_large_contours"><strong>1. Large Contours</strong></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Large contours refer to <strong>long, continuous cuts</strong> or <strong>outer profiles</strong> of a part.</p>
+</li>
+<li>
+<p>These are usually <strong>primary</strong> cutting paths that define the external shape.</p>
+</li>
+<li>
+<p><strong>Characteristics:</strong></p>
+</li>
+<li>
+<p>Straight or smoothly curved.</p>
+</li>
+<li>
+<p>Fewer interruptions.</p>
+</li>
+<li>
+<p>Can be cut at <strong>higher speeds</strong> since there’s less risk of thermal buildup or precision loss.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_medium_contours"><strong>2. Medium Contours</strong></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Medium-sized features inside or along the part, such as <strong>large cutouts, holes, or slots</strong>.</p>
+</li>
+<li>
+<p>These are more complex than large contours but not as intricate as small contours.</p>
+</li>
+<li>
+<p><strong>Characteristics:</strong></p>
+</li>
+<li>
+<p>May require adjustments in cutting speed due to moderate detail.</p>
+</li>
+<li>
+<p>Need some level of <strong>precision</strong> control to maintain accuracy.</p>
+</li>
+<li>
+<p>Can influence heat dissipation and material behavior.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_small_contours"><strong>3. Small Contours</strong></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>These refer to <strong>detailed, intricate cuts</strong> such as <strong>small holes, fine patterns, or sharp corners</strong>.</p>
+</li>
+<li>
+<p>Cutting small contours requires <strong>higher precision</strong> and <strong>slower speeds</strong> to maintain accuracy and avoid defects.</p>
+</li>
+<li>
+<p><strong>Characteristics:</strong></p>
+</li>
+<li>
+<p>Often involve <strong>tight radii, intricate shapes, or densely packed cut areas</strong>.</p>
+</li>
+<li>
+<p>Prone to <strong>thermal effects</strong> (melting, burrs, material distortion).</p>
+</li>
+<li>
+<p>May require <strong>adaptive strategies</strong> like reduced power, fine nozzle control, or micro-joint techniques.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_analog_calibration_curves">Analog calibration curves</h4>
+<div class="paragraph">
+<p>Trumpf uses a 3 point calibration curve for the analog laser control.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/3ptltt.png" alt="3ptLTT"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flyline">FlyLine</h3>
+<div class="paragraph">
+<p>FlyLine is a machining strategy that can help to save a consider able amount of time when machining certain sheet types. FlyLine is especially effective for hole grids.
+* Laser beam is switched on and off on-the-fly with a high degree of position accuracy. The axes are not stopped when the laser beam is switched on and off.
+* Individual contours that are not on one line are split up into axis-parallel contour sections. This makes it possible to avoid corner machining. The speed is reduced only for the few changes in direction</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_securing_cut_parts_in_place">Securing cut parts in place</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When laser cutting sheet metal, it may be necessary not to cut parts completely free, but to secure them to the sheet metal or the scrap skeleton.</p>
+</div>
+<div class="sect2">
+<h3 id="_microjoint">Microjoint</h3>
+<div class="paragraph">
+<p>Microjoints create small bridges between the part that has been cut free and the scrap skeleton.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Microjoints are created by switching the laser beam off for a certain period of time during the cutting process and then back on again. Meanwhile, the cutting head continues to follow the contour. Due to this interruption, a bridge with the entire sheet thickness
+remains on the contour path.</p>
+<div class="literalblock">
+<div class="content">
+<pre>■ The process requires rework.
+■ The process is suitable for thin to medium-thick sheets.
+■ The process takes a certain amount of time.</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nanojoint">Nanojoint</h3>
+<div class="paragraph">
+<p>Nanojoints specifically create small connections on the under side of the sheet between the cut part and the scrap skeleton. During the cutting process, the laser power is reduced by a certain value for a short period of time so that the sheet metal is not completely severed. After a defined period of time, the laser power is increased again and the cut is continued. This leaves a small connection between the cut part and the scrap skeleton on the underside of the sheet.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> ■ The process does not add time during the cutting process
+and therefore does not affect productivity.
+ ■ Due to the small dimensions of a nanojoint, the parts can be
+easily removed or pulled out.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+                    </article>
+                </div>
+                <div id="site-toc-holder">
+                    <aside id="site-toc">
+  <h3>Contents</h3>
+  <ul>
+    <li level="1">
+      <a href="#_normal_piercing">Normal piercing</a>
+    </li>
+    <li level="1">
+      <a href="#_gentle_piercing">Gentle piercing</a>
+    </li>
+    <li level="1">
+      <a href="#_multistage_piercing">Multistage piercing</a>
+    </li>
+    <li level="1">
+      <a href="#_pierceline_piercing_sensor">PierceLine piercing sensor</a>
+    </li>
+    <li level="1">
+      <a href="#_approach_strategies">Approach strategies</a>
+    </li>
+    <li level="2">
+      <a href="#_approach_with_pre_cut">Approach with pre-cut</a>
+    </li>
+    <li level="2">
+      <a href="#_cooling_after_approach">Cooling after approach</a>
+    </li>
+    <li level="1">
+      <a href="#_marking_and_dot_marking">Marking and dot marking</a>
+    </li>
+    <li level="1">
+      <a href="#_cutting_procedure">Cutting procedure</a>
+    </li>
+    <li level="2">
+      <a href="#_cutting_in_large_medium_and_small_contour">Cutting in Large, Medium and small contour</a>
+    </li>
+    <li level="2">
+      <a href="#_1_large_contours"><strong>1. Large Contours</strong></a>
+    </li>
+    <li level="2">
+      <a href="#_2_medium_contours"><strong>2. Medium Contours</strong></a>
+    </li>
+    <li level="2">
+      <a href="#_3_small_contours"><strong>3. Small Contours</strong></a>
+    </li>
+    <li level="2">
+      <a href="#_flyline">FlyLine</a>
+    </li>
+    <li level="1">
+      <a href="#_securing_cut_parts_in_place">Securing cut parts in place</a>
+    </li>
+    <li level="2">
+      <a href="#_microjoint">Microjoint</a>
+    </li>
+    <li level="2">
+      <a href="#_nanojoint">Nanojoint</a>
+    </li>
+  </ul>
+</aside>
+
+                </div>
+            </div>
+            <nav class="pagination">
+  <span class="prev"><a href="general.html">Terminology</a></span>
+  <span class="next"><a href="selection.html">Modifying Laser Data</a></span>
+</nav>
+
+        </div>
+        <div id="searchbox">
+          <input id="searchinput" type="search" placeholder="Search... (Key: F)" autocomplete="false" size="30" />
+          <ul id="results"></ul>
+        </div>
+    </div>
+    <footer id="site-footer">
+        <div class="left">
+            <p>&nbsp;&nbsp;Copyright &copy; 2024 by Trumpf-Metamation. All rights reserved.</p>
+        </div>
+        <div class="middle"></div>
+        <div class="right">
+            <p>Compiled by Bento</p>
+            <img src="../res/bento.png" />
+        </div>
+    </footer>
+    <script>
+        // The baseLevel is used to assign the search result pages.
+        var baseLevel = "../res".replace("res", "");
+    </script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="../res/index.js"></script>
+    <script src="../res/files.js"></script>
+    <script src="../res/site.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<div class="paragraph">
+<p>Usually the most frequent problem with KL59 is the mal-function of Faulhaber focus motor.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After the focus motor replacing, service firstly needs to evaluate whether the focus motor is properly assembled (the relative position of the zero mark impulse with respect to the reference switch: target value is around 500~1000).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>And now the coding in codesys is done and tested in sub-program RefAdjust. This new program needs to be integrated into Vulcan: a SW button on HMI which can only be accessed by service should be added. And this measuring program can be executed by pressing this SW button. After program execution, the measured relative position can be returned onto HMI so that the service can evaluate and decide whether mechanical re-adjustment is necessary.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After focus motor replacing, the focus offset of the new assembly needs to be measured and then recorded as the new parameter for Vulcan and Focus motor&#8217;s drive parameter.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>And now the coding in codesys is done and tested in sub-program RefMeasure. This new program needs to be integrated into Vulcan: a SW button on HMI which can only be accessed by service should be added. And this measuring program can be executed by pressing this SW button. After program execution, the measured focus offset should automatically recorded into Vulcan and Focus motor&#8217;s drive parameter.</p>
+</div>
+<div class="paragraph">
+<p>The following focus setting dialogs are available:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Focref1.png" alt="Focref1"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/Focref2.png" alt="Focref2"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/focref3.png" alt="focref3"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+see service manual for more details
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><a href="https://metamation.fogbugz.com/f/cases/35532" class="bare">https://metamation.fogbugz.com/f/cases/35532</a></p>
+</div>
