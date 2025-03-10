@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../res/tree.css">
   <link rel="stylesheet" href="../res/sibling.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Edit NC Code</title>
+  <title>Edit NCCode</title>
 </head>
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
@@ -32,7 +32,7 @@
         <li><button class="tree blank"></button><a href="create.html">Create</a></li>
         <li><button class="tree blank"></button><a href="filemanager.html">File management</a></li>
         <li><button class="tree blank"></button><a href="programs.html">Select program</a></li>
-        <li><button class="tree blank"></button><a class="active" href="edit.html">Edit NC Code</a></li>
+        <li><button class="tree blank"></button><a class="active" href="edit.html">Edit NCCode</a></li>
         <li><button class="tree blank"></button><a href="laserfunct.html">Edit Laser Technology</a></li>
         <li><button class="tree blank"></button><a href="layout.html">Edit layout</a></li>
         <li><button class="tree blank"></button><a href="simulation.html">Simulation run</a></li>
@@ -110,6 +110,7 @@
       <a href="../advanced/index.html">Advanced functionality</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../advanced/nozzlechanger.html">Nozzle Changer</a></li>
+        <li><button class="tree blank"></button><a href="../advanced/palletchanger.html">Pallet changer settings</a></li>
         <li><button class="tree blank"></button><a href="../advanced/statuslight.html">Status light</a></li>
         <li><button class="tree blank"></button><a href="../advanced/suctionlayout.html">Suction cup layout</a></li>
         <li><button class="tree blank"></button><a href="../advanced/automationinterface.html">Automation Interface</a></li>
@@ -159,7 +160,6 @@
         <li><button class="tree blank"></button><a href="../serviceinformation/pilotlaser.html">Calibration of the pilot laser</a></li>
         <li><button class="tree blank"></button><a href="../serviceinformation/servicemode.html">Service settings</a></li>
         <li><button class="tree blank"></button><a href="../serviceinformation/servkl59.html">PLC functions for service's maintenance/ repair work for KL59</a></li>
-        <li><button class="tree blank"></button><a href="../serviceinformation/palletchanger.html">Pallet changer settings</a></li>
         <li><button class="tree blank"></button><a href="../serviceinformation/dca.html">DCA settings</a></li>
         <li><button class="tree blank"></button><a href="../serviceinformation/miniplayer.html">Info messages</a></li>
       </ul>
@@ -192,28 +192,24 @@
   </div>
   <div>/</div>
   <div>
-    <a href="edit.html">Edit NC Code</a>
+    <a href="edit.html">Edit NCCode</a>
   </div>
 </nav>
 
             <div id="site-crumb-below">
                 <div id="site-toc-left">
                     <article id="article">
-                        <h1>Edit NC Code</h1>
-<div class="sect1">
-<h2 id="_edit_din_text">Edit DIN Text</h2>
+                        <h1>Edit NCCode</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Select (touch) the DIN program you want to edit and then press this button. This brings the <strong>Edit</strong> page where user can make the necessary changes to the program. The page shows the program name and dimension at the top. User can change the orientation in which the program should be displayed (portrait or landscape) in “machine settings”.</p>
+<p>With vulcan you have full control over your NC Code either by menu buttons or to edit the text directly.  Select the program you want to edit and then press this button.</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="img/image17.jpeg" alt="Edit DIN"></span></p>
 </div>
-<div class="sect2">
-<h3 id="_din_text">DIN text</h3>
-<div class="paragraph">
-<p>In the DIN text page, we can make changes to the NC. When we can select a line in DIN editor, the corresponding segment in the drawing will be highlighted and vice versa. The find (Ctrl + F) and replace (Ctrl + H) options of a text editor are available.</p>
 </div>
+<div class="sect1">
+<h2 id="_edit_page">Edit page</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><span class="image"><img src="img/image18.jpeg" alt="DIN editor" width="750"></span></p>
 </div>
@@ -245,17 +241,22 @@ It will save the changes made by the user.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_edit_lst">Edit LST</h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p>Select (touch) the LST program you want to edit and then press this button. This brings the Edit page where user can make the necessary changes to the program. In the LST text page, we can make changes to the NC. The find (Ctrl + F) and replace (Ctrl + H) options of a text editor are available.<br></p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/image39.jpeg" alt="Edit LST" width="498"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_orientation">Orientation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The page shows the program name and dimension at the top. User can change the orientation in which the program should be displayed (portrait or landscape) in “machine settings”.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image17.jpeg" alt="Edit DIN"></span></p>
 </div>
 </div>
 </div>
@@ -267,13 +268,10 @@ It will save the changes made by the user.</p>
   <h3>Contents</h3>
   <ul>
     <li level="1">
-      <a href="#_edit_din_text">Edit DIN Text</a>
-    </li>
-    <li level="2">
-      <a href="#_din_text">DIN text</a>
+      <a href="#_edit_page">Edit page</a>
     </li>
     <li level="1">
-      <a href="#_edit_lst">Edit LST</a>
+      <a href="#_orientation">Orientation</a>
     </li>
   </ul>
 </aside>

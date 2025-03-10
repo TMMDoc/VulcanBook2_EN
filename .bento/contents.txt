@@ -59,6 +59,7 @@ Index
   material
 Index
   nozzleChanger
+  palletchanger
   statuslight
   Suctionlayout
   automationinterface
@@ -83,7 +84,6 @@ Index
   pilotlaser
   servicemode
   servKL59
-  palletchanger
   DCA
   miniplayer
 Index
