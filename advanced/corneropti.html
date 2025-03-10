@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../res/tree.css">
   <link rel="stylesheet" href="../res/sibling.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Technology functions</title>
+  <title>Automated corner optimization</title>
 </head>
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
@@ -28,7 +28,7 @@
       <a href="../workflow/index.html">Production Workflow</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../workflow/preparation.html">Preparation </a></li>
-        <li><button class="tree blank"></button><a href="../workflow/setup.html">Setup</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/setup.html">Jogging and Homing</a></li>
         <li><button class="tree blank"></button><a href="../workflow/create.html">Create</a></li>
         <li><button class="tree blank"></button><a href="../workflow/filemanager.html">File management</a></li>
         <li><button class="tree blank"></button><a href="../workflow/programs.html">Select program</a></li>
@@ -42,19 +42,18 @@
       </ul>
     </li>
     <li>
-      <button class="tree open"></button>
-      <a href="index.html">Laser Technology Tables (LTT)</a>
-      <ul>
-        <li><button class="tree blank"></button><a href="general.html">Terminology</a></li>
-        <li><button class="tree blank"></button><a href="overview.html">Laser Data items</a></li>
-        <li><button class="tree blank"></button><a href="selection.html">Modifying Laser Data</a></li>
-        <li><button class="tree blank"></button><a href="export.html">LTT Management</a></li>
-        <li><button class="tree blank"></button><a href="transversal.html">Transversal blow</a></li>
-        <li><button class="tree blank"></button><a href="rampcycles.html">Ramp cycles</a></li>
-        <li><button class="tree blank"></button><a href="multistage.html">Multistage piercing</a></li>
-        <li><button class="tree blank"></button><a href="flycut.html">FlyCut</a></li>
-        <li><button class="tree blank"></button><a class="active" href="advanced.html">Technology functions</a></li>
-        <li><button class="tree blank"></button><a href="dca.html">Dynamic Parameters (DCA)</a></li>
+      <button class="tree closed"></button>
+      <a href="../ltt/index.html">Laser Technology Tables (LTT)</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../ltt/general.html">Terminology</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/overview.html">Laser Data items</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/selection.html">Modifying Laser Data</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/export.html">LTT Management</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/transversal.html">Transversal blow</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/rampcycles.html">Ramp cycles</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/multistage.html">Multistage piercing</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/flycut.html">FlyCut</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/dca.html">Dynamic Parameters (DCA)</a></li>
       </ul>
     </li>
     <li>
@@ -107,13 +106,15 @@
       </ul>
     </li>
     <li>
-      <button class="tree closed"></button>
-      <a href="../advanced/index.html">Advanced functionality</a>
-      <ul class="hide">
-        <li><button class="tree blank"></button><a href="../advanced/increaseaccuracy.html">Increase Accuracy</a></li>
-        <li><button class="tree blank"></button><a href="../advanced/automationinterface.html">Automation Interface</a></li>
-        <li><button class="tree blank"></button><a href="../advanced/suctionlayout.html">Suction cup layout</a></li>
-        <li><button class="tree blank"></button><a href="../advanced/adaptiveoptics.html">Specialized Laser funcitions</a></li>
+      <button class="tree open"></button>
+      <a href="index.html">Advanced functionality</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="nozzlechanger.html">Nozzle Changer</a></li>
+        <li><button class="tree blank"></button><a href="statuslight.html">Status light</a></li>
+        <li><button class="tree blank"></button><a href="suctionlayout.html">Suction cup layout</a></li>
+        <li><button class="tree blank"></button><a href="automationinterface.html">Automation Interface</a></li>
+        <li><button class="tree blank"></button><a href="adaptiveoptics.html">KL59, Laser & Optics</a></li>
+        <li><button class="tree blank"></button><a class="active" href="corneropti.html">Automated corner optimization</a></li>
       </ul>
     </li>
     <li>
@@ -187,54 +188,37 @@
     </button>
   </div>
   <div>
-    <a href="index.html">Laser Technology Tables (LTT)</a>
+    <a href="index.html">Advanced functionality</a>
   </div>
   <div>/</div>
   <div>
-    <a href="advanced.html">Technology functions</a>
+    <a href="corneropti.html">Automated corner optimization</a>
   </div>
 </nav>
 
             <div id="site-crumb-below">
                 <div id="site-toc-left">
                     <article id="article">
-                        <h1>Technology functions</h1>
-<div id="preamble">
-<div class="sectionbody">
+                        <h1>Automated corner optimization</h1>
 <div class="paragraph">
-<p>There are many advanced functions available in Vulcan. Some of them are listed below:</p>
+<p>Corners are very important for the quality of your parts since the thermal impact might lead to burrs or process problems. Vulan offers an automated corner optimization feature. This feature is used to optimize the cutting path of the laser beam in order to reduce the cutting time and improve the cutting quality.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_option_for_cool_at_corners_where_roundinglooping_is_not_possible">Option for "Cool at corners where rounding/looping is not possible"</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>To improve the quality of your parts you could use the option "Cool at corners where rounding/looping is not possible". This option is available in the technology settings.</p>
+<p>The automated corner optimization feature can be activated in the settings page. To improve the quality of your parts you could use the option <strong>"Cool at corners where rounding/looping is not possible"</strong>. This option is available in the technology settings.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/advanced.png" alt="advanced"></span></p>
-</div>
-</div>
 </div>
 
                     </article>
                 </div>
                 <div id="site-toc-holder">
-                    <aside id="site-toc">
-  <h3>Contents</h3>
-  <ul>
-    <li level="1">
-      <a href="#_option_for_cool_at_corners_where_roundinglooping_is_not_possible">Option for "Cool at corners where rounding/looping is not possible"</a>
-    </li>
-  </ul>
-</aside>
-
+                    <aside id="site-toc"></aside>
                 </div>
             </div>
             <nav class="pagination">
-  <span class="prev"><a href="flycut.html">FlyCut</a></span>
-  <span class="next"><a href="dca.html">Dynamic Parameters (DCA)</a></span>
+  <span class="prev"><a href="adaptiveoptics.html">KL59, Laser & Optics</a></span>
+  <span class="next"><a href="../programmingmanual/index.html">Programming manual</a></span>
 </nav>
 
         </div>

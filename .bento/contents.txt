@@ -22,7 +22,6 @@ Index
   Rampcycles
   multistage
   Flycut
-  advanced
   DCA
 Index
   vaporize
@@ -59,10 +58,12 @@ Index
   loading
   material
 Index
-  increaseAccuracy
-  automationinterface
+  nozzleChanger
+  statuslight
   Suctionlayout
+  automationinterface
   adaptiveOptics
+  corneropti
 Index
   Index
   Index
