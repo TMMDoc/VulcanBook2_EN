@@ -61,7 +61,26 @@ The accuracy of the 2-point strategy is limited by the accuracy of the machine a
 </table>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="img/2pt.png" alt="2pt"></span></p>
+<p>The logic works as follows</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/2pt.svg" alt="2pt"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You select with the laser a position close to the desired zero position</p>
+</li>
+<li>
+<p>The machine does a corner search in X direction from the position where you started</p>
+</li>
+<li>
+<p>The machine does a corner search on <strong>the closest center between two slats</strong>. This will maximize a accurate corner measuring</p>
+</li>
+<li>
+<p>The machine goes to the corner it found and cuts the part after confirmation</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
