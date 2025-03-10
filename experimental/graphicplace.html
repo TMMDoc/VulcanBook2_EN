@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../res/tree.css">
   <link rel="stylesheet" href="../res/sibling.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Reentry</title>
+  <title>Camera based part placement</title>
 </head>
 <body id="site-body" onload="sLoaded()">
     <header id="site-header">
@@ -24,21 +24,21 @@
     <li><button class="tree blank"></button><a href="../index.html">Welcome to Vulcan</a></li>
     <li><button class="tree blank"></button><a href="../features.html">Features</a></li>
     <li>
-      <button class="tree open"></button>
-      <a href="index.html">Production Workflow</a>
-      <ul>
-        <li><button class="tree blank"></button><a href="preparation.html">Preparation </a></li>
-        <li><button class="tree blank"></button><a href="setup.html">Jogging and Homing</a></li>
-        <li><button class="tree blank"></button><a href="create.html">Create</a></li>
-        <li><button class="tree blank"></button><a href="filemanager.html">File management</a></li>
-        <li><button class="tree blank"></button><a href="programs.html">Select program</a></li>
-        <li><button class="tree blank"></button><a href="edit.html">Edit NCCode</a></li>
-        <li><button class="tree blank"></button><a href="laserfunct.html">Edit Laser Technology</a></li>
-        <li><button class="tree blank"></button><a href="layout.html">Edit layout</a></li>
-        <li><button class="tree blank"></button><a href="simulation.html">Simulation run</a></li>
-        <li><button class="tree blank"></button><a href="offset.html">Work offsets</a></li>
-        <li><button class="tree blank"></button><a href="run.html">Run</a></li>
-        <li><button class="tree blank"></button><a class="active" href="reentry.html">Reentry</a></li>
+      <button class="tree closed"></button>
+      <a href="../workflow/index.html">Production Workflow</a>
+      <ul class="hide">
+        <li><button class="tree blank"></button><a href="../workflow/preparation.html">Preparation </a></li>
+        <li><button class="tree blank"></button><a href="../workflow/setup.html">Jogging and Homing</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/create.html">Create</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/filemanager.html">File management</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/programs.html">Select program</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/edit.html">Edit NCCode</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/laserfunct.html">Edit Laser Technology</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/layout.html">Edit layout</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/simulation.html">Simulation run</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/offset.html">Work offsets</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/run.html">Run</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/reentry.html">Reentry</a></li>
       </ul>
     </li>
     <li>
@@ -136,14 +136,14 @@
       </ul>
     </li>
     <li>
-      <button class="tree closed"></button>
-      <a href="../experimental/index.html">Experimental features</a>
-      <ul class="hide">
-        <li><button class="tree blank"></button><a href="../experimental/nozzlecentering.html">Camera based Nozzle Centering</a></li>
-        <li><button class="tree blank"></button><a href="../experimental/automatedfocuscomb.html">Automated Focus Comb</a></li>
-        <li><button class="tree blank"></button><a href="../experimental/graphicplace.html">Camera based part placement</a></li>
-        <li><button class="tree blank"></button><a href="../experimental/highpoweroptions.html">High Power Options</a></li>
-        <li><button class="tree blank"></button><a href="../experimental/praxisvulcan.html">Direct connection to Praxis</a></li>
+      <button class="tree open"></button>
+      <a href="index.html">Experimental features</a>
+      <ul>
+        <li><button class="tree blank"></button><a href="nozzlecentering.html">Camera based Nozzle Centering</a></li>
+        <li><button class="tree blank"></button><a href="automatedfocuscomb.html">Automated Focus Comb</a></li>
+        <li><button class="tree blank"></button><a class="active" href="graphicplace.html">Camera based part placement</a></li>
+        <li><button class="tree blank"></button><a href="highpoweroptions.html">High Power Options</a></li>
+        <li><button class="tree blank"></button><a href="praxisvulcan.html">Direct connection to Praxis</a></li>
       </ul>
     </li>
     <li>
@@ -189,45 +189,26 @@
     </button>
   </div>
   <div>
-    <a href="index.html">Production Workflow</a>
+    <a href="index.html">Experimental features</a>
   </div>
   <div>/</div>
   <div>
-    <a href="reentry.html">Reentry</a>
+    <a href="graphicplace.html">Camera based part placement</a>
   </div>
 </nav>
 
             <div id="site-crumb-below">
                 <div id="site-toc-left">
                     <article id="article">
-                        <h1>Reentry</h1>
+                        <h1>Camera based part placement</h1>
 <div class="paragraph">
-<p>In case you had to stop a program in the previous run Vulcan allows you to re-entry this sheet again to save the material.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Continue from stop point should resume the program</p>
-</li>
-<li>
-<p>Restart from Beginning should begin a new run</p>
-</li>
-<li>
-<p>Cancel should go back to the previous screen (no running the program)</p>
-</li>
-</ul>
+<p>With the general USB camera support a cost efficient solution of a visual placement of parts is possible. It will be realized with an overlay of 2 cameras to cover 600x1500 mm workspace.</p>
 </div>
 <div class="paragraph">
-<p>Re-entry point allows the user to restart an interrupted program from a specific point. User can select the particular line in the DIN editor or directly select the segment in the drawing or use the “goto” option. Block input has the option of entering the line and block number manually in block input or by choosing the segment, it will update. Within the selected segment, the slider can be used to position the point, exactly from which the program has to be executed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="img/image53.jpeg" alt="Re-entry point window" width="750">
-</div>
+<p><span class="image"><img src="img/visplace1.png" alt="visplace1"></span></p>
 </div>
 <div class="paragraph">
-<p>In the “goto” option the user can navigate between different contours or segments. After selecting the point and clicking done, activates the block search mode. When you press START, the machine moves to the position from which the program restarts. After approaching the start position, the following message appears: “Block search target position reached. Press START to continue”.
-Now press START to begin processing.</p>
+<p><span class="image"><img src="img/visplace2.png" alt="visplace2"></span></p>
 </div>
 
                     </article>
@@ -237,8 +218,8 @@ Now press START to begin processing.</p>
                 </div>
             </div>
             <nav class="pagination">
-  <span class="prev"><a href="run.html">Run</a></span>
-  <span class="next"><a href="../ltt/index.html">Laser Technology Tables (LTT)</a></span>
+  <span class="prev"><a href="automatedfocuscomb.html">Automated Focus Comb</a></span>
+  <span class="next"><a href="highpoweroptions.html">High Power Options</a></span>
 </nav>
 
         </div>
