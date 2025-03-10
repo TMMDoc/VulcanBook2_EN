@@ -30,7 +30,7 @@
         <li><button class="tree blank"></button><a href="../workflow/preparation.html">Preparation </a></li>
         <li><button class="tree blank"></button><a href="../workflow/setup.html">Setup</a></li>
         <li><button class="tree blank"></button><a href="../workflow/create.html">Create</a></li>
-        <li><button class="tree blank"></button><a href="../workflow/filemanager.html">Filemanager</a></li>
+        <li><button class="tree blank"></button><a href="../workflow/filemanager.html">File management</a></li>
         <li><button class="tree blank"></button><a href="../workflow/programs.html">Select program</a></li>
         <li><button class="tree blank"></button><a href="../workflow/edit.html">Edit NC Code</a></li>
         <li><button class="tree blank"></button><a href="../workflow/laserfunct.html">Edit Laser Technology</a></li>
@@ -53,9 +53,7 @@
         <li><button class="tree blank"></button><a class="active" href="rampcycles.html">Ramp cycles</a></li>
         <li><button class="tree blank"></button><a href="multistage.html">Multistage piercing</a></li>
         <li><button class="tree blank"></button><a href="flycut.html">FlyCut</a></li>
-        <li><button class="tree blank"></button><a href="ldm.html">Laser data base</a></li>
-        <li><button class="tree blank"></button><a href="advanced.html">Advanced functions</a></li>
-        <li><button class="tree blank"></button><a href="cuttingtools.html">Cutting tools</a></li>
+        <li><button class="tree blank"></button><a href="advanced.html">Technology functions</a></li>
         <li><button class="tree blank"></button><a href="dca.html">Dynamic Parameters (DCA)</a></li>
       </ul>
     </li>
@@ -63,11 +61,13 @@
       <button class="tree closed"></button>
       <a href="../technology/index.html">Technology functions</a>
       <ul class="hide">
+        <li><button class="tree blank"></button><a href="../technology/vaporize.html">Vaporize sheet</a></li>
         <li><button class="tree blank"></button><a href="../technology/micro.html">Micro Joints</a></li>
         <li><button class="tree blank"></button><a href="../technology/nano.html">Nano Joints</a></li>
         <li><button class="tree blank"></button><a href="../technology/pierceline.html">Pierce Line sensor</a></li>
         <li><button class="tree blank"></button><a href="../technology/frog.html">Frog jumping</a></li>
         <li><button class="tree blank"></button><a href="../technology/analoggas.html">Analog gas calibration</a></li>
+        <li><button class="tree blank"></button><a href="../technology/cuttingtools.html">Cutting tools</a></li>
         <li><button class="tree blank"></button><a href="../technology/dfc.html">DFC Dynamic focus control </a></li>
       </ul>
     </li>
@@ -75,7 +75,6 @@
       <button class="tree closed"></button>
       <a href="../controls/index.html">Control elements</a>
       <ul class="hide">
-        <li><button class="tree blank"></button><a href="../controls/lumimeasure.html">Lumi Measure</a></li>
         <li><button class="tree blank"></button><a href="../controls/protective.html">Protective glas monitoring</a></li>
         <li><button class="tree blank"></button><a href="../controls/focuscomb.html">Focus Comb</a></li>
         <li><button class="tree blank"></button><a href="../controls/focaldistance.html">Focal Distance</a></li>
@@ -93,7 +92,6 @@
         <li><button class="tree blank"></button><a href="../controls/edgedetection.html">Edge Detection</a></li>
         <li><button class="tree blank"></button><a href="../controls/pilotdiodepos.html">Pilot Diode Positioning</a></li>
         <li><button class="tree blank"></button><a href="../controls/gaspressurecalib.html">Gas pressure calibration</a></li>
-        <li><button class="tree blank"></button><a href="../controls/remainder.html">Remainder sheet cut</a></li>
       </ul>
     </li>
     <li>
@@ -115,7 +113,6 @@
         <li><button class="tree blank"></button><a href="../advanced/increaseaccuracy.html">Increase Accuracy</a></li>
         <li><button class="tree blank"></button><a href="../advanced/automationinterface.html">Automation Interface</a></li>
         <li><button class="tree blank"></button><a href="../advanced/suctionlayout.html">Suction cup layout</a></li>
-        <li><button class="tree blank"></button><a href="../advanced/vaporize.html">Vaporize sheet</a></li>
         <li><button class="tree blank"></button><a href="../advanced/adaptiveoptics.html">Specialized Laser funcitions</a></li>
       </ul>
     </li>
@@ -140,7 +137,7 @@
       <button class="tree closed"></button>
       <a href="../experimental/index.html">Experimental features</a>
       <ul class="hide">
-        <li><button class="tree blank"></button><a href="../experimental/nozzlecentering.html">Nozzle Centering</a></li>
+        <li><button class="tree blank"></button><a href="../experimental/nozzlecentering.html">Camera based Nozzle Centering</a></li>
         <li><button class="tree blank"></button><a href="../experimental/automatedfocuscomb.html">Automated Focus Comb</a></li>
         <li><button class="tree blank"></button><a href="../experimental/highpoweroptions.html">High Power Options</a></li>
         <li><button class="tree blank"></button><a href="../experimental/praxisvulcan.html">Direct connection to Praxis</a></li>
@@ -204,6 +201,9 @@
                         <h1>Ramp cycles</h1>
 <div class="paragraph">
 <p>For quality piercings Laser Ramp Cycles are used to control the laser power during the piercing process. In ramp mode, a start hole for laser cutting can be produced in a low-impact manner. To do this, the laser power and the gating frequency are controlled via a programmed interval. This piercing process prevents damage to the focusing optics and ensures that uncontrolled burning away of material does not occur.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ramp1.png" alt="ramp1"></span></p>
 </div>
 <div class="paragraph">
 <p>The ramp will only be shown graphically in the user interface for a maximum of 100 s. Longer ramps will however still run as defined. The laser&#8217;s power, times and gating frequency must be adjusted for the material&#8217;s type and thickness.</p>
