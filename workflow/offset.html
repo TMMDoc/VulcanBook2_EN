@@ -46,14 +46,21 @@
       <a href="../ltt/index.html">Laser Technology Tables (LTT)</a>
       <ul class="hide">
         <li><button class="tree blank"></button><a href="../ltt/general.html">Terminology</a></li>
-        <li><button class="tree blank"></button><a href="../ltt/overview.html">Laser Data items</a></li>
+        <li>
+          <button class="tree closed"></button>
+          <a href="../ltt/laserdata/index.html">Laser Data items</a>
+          <ul class="hide">
+            <li><button class="tree blank"></button><a href="../ltt/laserdata/piercing.html">Piercing</a></li>
+            <li><button class="tree blank"></button><a href="../ltt/laserdata/multistage.html">Multistage piercing</a></li>
+            <li><button class="tree blank"></button><a href="../ltt/laserdata/cutting.html">Cutting</a></li>
+            <li><button class="tree blank"></button><a href="../ltt/laserdata/special.html">Special processes</a></li>
+          </ul>
+        </li>
         <li><button class="tree blank"></button><a href="../ltt/selection.html">Modifying Laser Data</a></li>
         <li><button class="tree blank"></button><a href="../ltt/export.html">LTT Management</a></li>
-        <li><button class="tree blank"></button><a href="../ltt/transversal.html">Transversal blow</a></li>
         <li><button class="tree blank"></button><a href="../ltt/rampcycles.html">Ramp cycles</a></li>
-        <li><button class="tree blank"></button><a href="../ltt/multistage.html">Multistage piercing</a></li>
         <li><button class="tree blank"></button><a href="../ltt/flycut.html">FlyCut</a></li>
-        <li><button class="tree blank"></button><a href="../ltt/dca.html">Dynamic Parameters (DCA)</a></li>
+        <li><button class="tree blank"></button><a href="../ltt/dca.html">Acceleration while cutting (DCA)</a></li>
       </ul>
     </li>
     <li>
@@ -85,6 +92,7 @@
         <li><button class="tree blank"></button><a href="../controls/nozzlecentre.html">Nozzle Centre</a></li>
         <li><button class="tree blank"></button><a href="../controls/targetshot.html">Target Shot</a></li>
         <li><button class="tree blank"></button><a href="../controls/gaspurge.html">Gas Purge</a></li>
+        <li><button class="tree blank"></button><a href="../controls/transversal.html">Transversal blow</a></li>
         <li><button class="tree blank"></button><a href="../controls/hcmanualset.html">HC Manual Set Point</a></li>
         <li><button class="tree blank"></button><a href="../controls/parkposition.html">Go To Park Position</a></li>
         <li><button class="tree blank"></button><a href="../controls/nozzleclean.html">Nozzle Clean & Height Sensor Calibration</a></li>
@@ -278,7 +286,7 @@ The accuracy of the 2-point strategy is limited by the accuracy of the machine a
 </div>
 </div>
 <div class="sect1">
-<h2 id="_3_point_edge_detection">3-point edge detection</h2>
+<h2 id="test">3-point edge detection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The 3 point method is much more accurate and takes 3 measurement points on a full sheet. It assumes we have a full sheet (&gt;1000x2000) on the table and does three corner searches at x300, x1500 and y300 to find the zero point. It is the preferred method to cut a full sheet.</p>
@@ -311,7 +319,7 @@ The accuracy of the 2-point strategy is limited by the accuracy of the machine a
       <a href="#_2_point_edge_detection">2-point edge detection</a>
     </li>
     <li level="1">
-      <a href="#_3_point_edge_detection">3-point edge detection</a>
+      <a href="#test">3-point edge detection</a>
     </li>
   </ul>
 </aside>

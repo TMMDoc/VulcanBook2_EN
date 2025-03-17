@@ -15,12 +15,14 @@ Index
   reentry
 Index
   general
-  overview
+  Index
+    Piercing
+    multistage
+    Cutting
+    special
   selection
   export
-  transversal
   Rampcycles
-  multistage
   Flycut
   DCA
 Index
@@ -44,6 +46,7 @@ Index
   NozzleCentre
   TargetShot
   GasPurge
+  transversal
   HCManualSet
   ParkPosition
   NozzleClean
