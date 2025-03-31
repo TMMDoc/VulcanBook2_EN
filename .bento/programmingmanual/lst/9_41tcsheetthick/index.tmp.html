@@ -1,0 +1,61 @@
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming Use</strong>
+Defines the Z position of the upper side of the sheet. Is used when cutting without active height regulation in order to define the position of the cutting head.
+The theoretical Z position of the upper side of the sheet is assumed when work is done without TC_SHEET_THICK.
+The measured Z position is taken into account for the next
+TC_LASER_ON call with the laser methods 2, 3, 6, 8, 10 and 12. The position of the laser cutting head is calculated by adding the measured value of TC_SHEET_THICK and of the nozzle distance from the technology table.
+TC_SHEET_THICK:
+■ Single-head mode must be selected in the laser cutting head table. Otherwise an error message will appear.
+■ Is always called up with a program-specific laser technology table.
+■ Takes effect with the next TC_LASER_ON call, which is programmed with one of the laser methods 2, 3, 4, 6, 8, 10 and 12.
+■ Acts till the next TC_LASER_OFF call.
+■ Deleted by M30 and RESET.
+■ Machining of blanks.
+■ Separation of waste grids.
+=</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N100 a|
+TC_LASER_ON(1,"1978",
+10,100)
+Laser ON.
+|N110 a|
+X&#8230;&#8203; Y&#8230;&#8203;
+Contour machining.
+|N120 a|
+TC_LASER_OFF(1)
+Laser OFF.
+|N130 a|
+TC_SHEET_THICK
+Measure the material thickness.
+|N140 a|
+X&#8230;&#8203; Y&#8230;&#8203;
+Positioning motion.
+|N150 a|
+TC_LASER_ON(6,"1978",
+0,100)
+Laser ON (cut without distance regulation).
+|N160 a|
+X&#8230;&#8203; Y&#8230;&#8203;
+Contour processing with measured material thickness.
+|N170 a|
+TC_LASER_OFF(1)
+Laser OFF.
+=</p>
+</div>

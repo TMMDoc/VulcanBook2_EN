@@ -1,0 +1,153 @@
+<div class="paragraph">
+<p>With the TC_TIMER cycle, machining times for single workpieces can be measured, displayed, and logged. A maximum of five timings can be simultaneously programmed, and displayed together later.
+TC_TIMER (INT P1, INT NUMBER, STRING[20] COMMENT)
+■ The laser beam must not be ignited.
+■ A maximum of five timings can be started parallel to each other, or one after the other. The sequence is arbitrary.
+■ It takes 0.5 seconds to start each timing. If several timings are started simultaneously, then these 0.5 seconds are added to each timing.
+■ The maximum measurable time is nine hours.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Parameter</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Value</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong>
+|INT P1 a|
+Start timing
+Stop timing, and save. At the same time, the machining program will continue to run.
+Stop all timings, and display. The machining program will stop until the display is closed.
+Stop all timings, and log. At the same time, the machining program will continue to run.
+|INT NUMBER a|
+Number of the measurement
+STRING[20] COM-
+Comment, no more than 20 characters
+=
+Tab. 5-25
+With TC_TIMER(4), the cycle writes the result of the measurements into the log 'tc_timer.txt'.
+The log is written into the directory 'c:\dh\topsmanu.dir\log \tc_timer' and is formatted for evaluation via a table calculation.
+■ The maximum size of the file is 100 kByte.
+■ Once the maximum file size is reached, 20 % of the data at the beginning of the file (the oldest entries) are deleted.
+■ The file can be completely deleted. It is then automatically re-created at the next measurement.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Log entry</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong>
+|PROGRAMM a|
+Name of the main program
+|DATE a|
+Date and time of the log entry
+=</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Log entry</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong>
+|TIMERNR a|
+Number of the timer, transfer parameter INT_NUM-
+|VALUE a|
+Measured time in HH:MM:SS.
+|COMMENT a|
+Comment, transfer parameter STRING[20] COM-
+=
+Tab. 5-26</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>PRO-</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>GRAMM</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>DATE</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>TIMERNR</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>VALUE</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>COMMENT</strong>
+|HP_1 a|
+2001-01-05
+15:38:54
+00:01:14
+|HP_1 a|
+2001-01-05
+15:38:54
+00:00:53
+|HP_1 a|
+2001-01-05
+15:38:54
+01:33:07
+|HP_1 a|
+2001-01-05
+15:38:54
+00:27:00
+|HP_1 a|
+2001-01-05
+15:38:54
+00:03:25
+=
+Example log Tab. 5-27</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N10 a|
+TC_MSG("UP,P100031704
+|N20 a|
+|N30 a|
+(TEILENUMMER:1)
+|N40 a|
+TC_POS_LEVEL(40.0)
+|N45 a|
+TC_TIMER(1,1,"First Part")
+Start first timing
+|N50 a|
+TC_LASER_ON(9,"3529", 10,100)
+|&#8230;&#8203; a|
+X&#8230;&#8203; Y&#8230;&#8203;
+|N70 a|
+TC_LASER_OFF(3)
+|N75 a|
+TC_TIMER(2,1)
+Stop first timing
+|N80 a|
+TC_TIMER(1,2,"Second part")
+Start second timing
+|&#8230;&#8203; a|
+|N300 a|
+TC_TIMER(2,2)
+Stop second timing
+|&#8230;&#8203; a|
+|N500 a|
+TC_TIMER(3)
+Display times of the timings
+=</p>
+</div>

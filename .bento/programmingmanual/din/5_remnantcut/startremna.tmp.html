@@ -1,0 +1,113 @@
+<div class="paragraph">
+<p>In Start Remnant cut, the cutting will be started from outside sheet and below are the procedures to be followed:</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Set the “Distance Regulation Control” as <strong><em>‘2’</em></strong> in cutting method!</p>
+</li>
+<li>
+<p>Set the “Remnant cut” bit in cutting method! (2<sup>nd</sup> Decimal = 2)</p>
+</li>
+<li>
+<p>The following M14 command will not switch on the beam but position the head inside the sheet and gas is ON.</p>
+</li>
+<li>
+<p>After the head is positioned, the negative motion of Z-axis is stopped, but allowed in positive direction (Distance Regulation = 2).</p>
+</li>
+<li>
+<p>Now move the head outside the sheet</p>
+</li>
+<li>
+<p>Switch On the beam by <strong><em>“M1014”</em></strong> command.</p>
+</li>
+<li>
+<p>Once the cutting enters into the sheet and after certain distance, switch on the “Distance Regulation On” by <strong><em>“M1012”</em></strong> command.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em><span class="underline">Sample Code:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 31%;">
+<col style="width: 69%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><em>G0 X478.512 Y990</em></th>
+<th class="tableblock halign-left valign-top">Position the head inside the sheet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>PM=0.000</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Piercing method should be 0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>CM=102.120</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Distance regulation = 2
+1<sup>st</sup> Decimal = 1 &#8658; Lead-in cut = Active (Optional)
+2<sup>nd</sup> Decimal = 2 &#8658; Remnant cut = Active</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>EM=1.000</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal End method</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>ZRH=40</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Z – retract height = 40</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Update_Param</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update the parameters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>G61</em></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Lead_In=10</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead in distance = 10mm (Optional)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>M14</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position the head to cutting height and gas is ON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>G01 X478.512 Y1005</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Head is locked and move the head outside the sheet edge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>M1014</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch on the Laser beam with lead in parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>G01 X478.512 Y995</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lead In distance = 10mm (Optional)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>G01 X478.512 Y990</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch to contour parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>M1012</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch ON the Distance Regulation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>G01 X478.512 Y514</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continue the cutting till the end</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>M15</em></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>G40 E1</em></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>

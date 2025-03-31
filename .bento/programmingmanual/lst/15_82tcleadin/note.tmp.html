@@ -1,0 +1,211 @@
+<div class="paragraph">
+<p>The parameter Approach direction marks the range for the finished part and scrap of a part</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>LEAD_IN parameter technology table</strong> | | | |</p>
+</div>
+<div class="paragraph">
+<p>|<strong>ID</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Unit</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|10 a|
+Table identifier
+Name of the table, e.g. "LI-1"
+|20 a|
+Small contour approach strategy
+Full approach without precut.
+| | a|
+Reduced approach on the first 80% of the linear approach path without precut.
+| | a|
+Approach with precut, reduced approach until the piercing point is reached again.
+=</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>LEAD_IN parameter technology table</strong>
+| | | |</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Unit</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+Medium contour approach strategy
+For value range and description, see ID20.
+Large contour approach strategy
+For value range and description, see ID20.
+Small contour piercing type (PiercingTypeSmall)
+Normal piercing.
+| | a|
+Gentle piercing.
+Medium contour piercing type (PiercingTypeMedium)
+For value range and description, see ID50.
+Large contour piercing type (PiercingTypeLarge)
+For value range and description, see ID50.
+Small contour approach method
+Piercing and cutting with distance regulation.
+| | a|
+Piercing and cutting without distance regulation.
+| | a|
+Piercing without distance regulation, cutting with distance regulation.
+| | a|
+Piercing with distance regulation, cutting without distance regulation.
+| | a|
+No piercing, cut with distance regulation.
+| | a|
+Piercing without ramp cycle, cut with distance regulation with analog laser power control (SprintLine).
+| | a|
+Piercing without ramp cycle, cut without distance regulation with analog laser power control (SprintLine).
+| | a|
+No piercing, cut with distance regulation with analog laser power control (SprintLine).
+Medium contour approach method
+For value range and description, see ID80.
+Large contour approach method
+For value range and description, see ID80.
+Small contour approach cutting type
+| | a|
+The coding contains three digits:
+■ 1st digit: contour − 1: Large contour.
+− 2: Medium contour. − 3: Small contour.
+■ 2nd digit: cutting speed − 0: Normal.
+− 1: Reduced from piercing hole.
+− 3: Reduced from thick sheet.
+■ 3rd digit: Acceleration ■ 0: Normal.
+| | a|
+No cutting.
+| | a|
+Cutting small contour, normal acceleration.
+| | a|
+Cutting small contour, reduced approach from the piercing hole, normal acceleration.
+| | a|
+Cutting small contour, reduced approach in the thick sheet, normal acceleration.
+=</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>LEAD_IN parameter technology table</strong>
+| | | |</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Unit</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+Medium contour approach cutting type
+No cutting.
+| | a|
+Cutting medium contour, normal acceleration.
+| | a|
+Cutting medium contour, reduced approach from the piercing hole, normal acceleration.
+| | a|
+Cutting medium contour, reduced approach in the thick sheet, normal acceleration.
+Large contour approach cutting type
+No cutting.
+| | a|
+Cutting large contour, normal acceleration.
+| | a|
+Cutting large contour, reduced approach from the piercing hole, normal acceleration.
+| | a|
+Cutting large contour, reduced approach in the thick sheet, normal acceleration
+140, 150,
+Vaporizing Type
+| | a|
+Vaporizing type
+Determines how vaporizing is done during approach
+■ ID small contour = 140
+■ ID medium contour = 150
+■ ID large contour = 160
+Small contour vaporizing type
+No vaporizing.
+| | a|
+Circular vaporizing only at the piercing hole.
+| | a|
+Vaporizing of the entire approach flag.
+Medium contour vaporizing type
+For value range and description, see ID140.
+Large contour vaporizing type
+For value range and description, see ID140.
+Small contour length of straight lines
+Length of the linear part of the approach flag.
+Medium contour length of straight lines
+Length of the linear part of the approach flag.
+Large contour straight line length
+Length of the linear part of the approach flag.
+Small contour arc radius
+Radius of the transition curve between the linear part of the approach flag and the entry point in the contour.
+Medium contour arc radius
+Radius of the transition curve between the linear part of the approach flag and the entry point in the contour.
+Large contour arc radius
+Radius of the transition curve between the linear part of the approach flag and the entry point in the contour.
+Small contour approach angle
+Angle between linear part of the approach flag and tool path (corresponds to the angle of the arc).
+Medium contour approach angle
+Angle between linear part of the approach flag and tool path (corresponds to the angle of the arc).
+Large contour approach angle
+Angle between linear part of the approach flag and tool path (corresponds to the angle of the arc).</p>
+</div>
+<div class="paragraph">
+<p>|<strong>LEAD_IN parameter technology table</strong> | | | |</p>
+</div>
+<div class="paragraph">
+<p>|<strong>ID</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Unit</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|260 a|
+Small contour precut length
+Length of the path that is precut during approach strategy 3 on the linear part of the approach flag cut in reduced mode. The precut length is limited to the value of the parameter "Straight line length".
+|270 a|
+Medium contour precut length
+Length of the path that is precut during approach strategy 3 on the linear part of the approach flag cut in reduced mode. The precut length is limited to the value of the parameter "Straight line length".
+|280 a|
+Large contour precut length
+Length of the path that is precut during approach strategy 3 on the linear part of the approach flag cut in reduced mode. The precut length is limited to the value of the parameter "Straight line length".
+=
+Tab. 5-33</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong>
+Example of approach direction Fig. 5-6</p>
+</div>
+<div class="paragraph">
+<p><strong>9. Flying focus position alteration</strong></p>
+</div>

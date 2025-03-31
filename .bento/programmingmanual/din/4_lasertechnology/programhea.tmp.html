@@ -1,0 +1,377 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_program_number">Program Number</a></li>
+<li><a href="#_program_name">Program Name</a></li>
+<li><a href="#_cnc_id">CNC ID</a></li>
+<li><a href="#_program_specification">Program Specification</a></li>
+<li><a href="#_xy_program_limits">XY Program Limits</a></li>
+<li><a href="#_program_dimensioning">Program Dimensioning</a></li>
+<li><a href="#_dual_head_synchronization">Dual Head Synchronization</a></li>
+<li><a href="#_check_work_offset_and_special_functions">Check Work Offset and Special functions</a></li>
+<li><a href="#_activation_of_g17_xy_plane_with_sheet_rotation">Activation of G17 (XY-Plane) with Sheet rotation</a></li>
+<li><a href="#_program_header_example">Program Header Example:</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The program header is the start of the program and executed only once during program running and it consists of following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Program Number</em></strong></p>
+</li>
+<li>
+<p><strong><em>Program Name as comment</em></strong></p>
+</li>
+<li>
+<p><strong><em>ID of the Controller (Tandem operation)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Program Specification</em></strong></p>
+</li>
+<li>
+<p><strong><em>XY Program Limits</em></strong></p>
+</li>
+<li>
+<p><strong><em>Program Dimensioning</em></strong></p>
+</li>
+<li>
+<p><strong><em>Dual head Synchronization (Tandem operation)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Check Work Offset &amp; Special functions</em></strong></p>
+</li>
+<li>
+<p><strong><em>Activation of G17 (XY-Plane) with Sheet rotation</em></strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Structure:</em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 43%;">
+<col style="width: 57%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">%1 (Sample.DIN)</th>
+<th class="tableblock halign-left valign-top">Program Number &amp; Program Name as comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CNC ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the Controller (1 or 2)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sheet_Size_X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Program Specification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sheet_Size_Y</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Job_Size_X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Job_Size_Y</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X_Limit_Minus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XY Program Limits</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X_Limit_Plus</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y_Limit_Minus</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y_Limit_Plus</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Program Dimensioning (ABS)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dual head Synchronization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check Work offset &amp; Special functions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G17 D=SheetRotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XY Plane is rotated w.r.t Sheet</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_program_number">Program Number</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The program number is always assigned with the value %<strong>1.</strong> Since all the Laser technology programs are assigned as Sub Programs and called from the Main program using the number <strong>1</strong>. Hence it is important to make sure the program number.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Program Number must be always %1</em></strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_program_name">Program Name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The program name is defined in the program as a comment and will be useful for block search functions. Depends on the name, the PLC will save the current block numbers, Co- ordinates, etc., of the program and when loaded again, their respective values are retrieved from the PLC.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Program Name must be in comment</em></strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cnc_id">CNC ID</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For Dual head tandem operation, 2 programs will be generated for a single job and the CNC ID will specify which program to be loaded in the controller as follows:</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>CNC_ID = 1, will contain the first half of the program and to be loaded in the controller, where the X-axis machine origin point starts.</p>
+</li>
+<li>
+<p>CNC_ID = 2, will contain the second half of the program and to be loaded in the controller, where the X-axis machine positive stroke limit is possible.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The Values are assigned to P-fields and for better understanding the P-fields are <strong><em>globally declared internally</em></strong> in the program as follows:</p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* CNC_ID P1909</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>The CNC_ID is required only for Dual head tandem operation</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_program_specification">Program Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The program specification defines the sheet size &amp; Job size along X &amp; Y axis. Based on the Machine Origin, the positive or negative sign in the size to be indicated.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image3.png" alt="image3" width="222" height="245"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bottom Left = X+, Y+</p>
+</li>
+<li>
+<p>Bottom Right = X+, Y-</p>
+</li>
+<li>
+<p>Top Left = X-, Y+</p>
+</li>
+<li>
+<p>Top Right = X- Y-</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Values are assigned to P-fields and for better understanding the P-fields are <strong><em>globally declared internally</em></strong> in the program as follows:</p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Sheet_Size_X P1900</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Sheet_Size_Y P1901</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Job_Size_X P1902</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Job_Size_Y P1903</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>This information will be useful for Scrap cut &amp; Boundary check programs</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_xy_program_limits">XY Program Limits</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The X &amp; Y-axis program limits are defined to ensure the machine strokes are within the limits. They are most useful in Dual head tandem operation, where a single job is separated between 2 heads and their limits are defined for the safety, boundary check program and Auto Lubrication program .</p>
+</div>
+<div class="paragraph">
+<p>The Values are assigned to P-fields and for better understanding the P-fields are <strong><em>globally declared internally</em></strong> in the program as follows:</p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* X_Limit_Minus P1910</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* X_Limit_Plus P1911</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Y_Limit_Minus P1912</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Y_Limit_Plus P1913</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>This information will be more useful for Dual head tandem operation</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_program_dimensioning">Program Dimensioning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The program dimensioning defines the dimensions of axes in the program is absolute or incremental.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G90/G91</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dual_head_synchronization">Dual Head Synchronization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If there is any dual head tandem operation, then ‘M50’ command will synchronize between two controllers and check for the program name, work offset etc., and then proceed further for cutting.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: M50</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>The M50 command will be used only for Tandem Operation, else not required</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_check_work_offset_and_special_functions">Check Work Offset and Special functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first M15 command in the program will check for the following:</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>With captured work offset and job size, the maximum stroke limits of X &amp; Y axis in the program are calculated and then cross checked with their end limits. If the Stroke are within the limits, then proceed further else the program will be aborted.</p>
+</li>
+<li>
+<p>Check for any special sub program functions such as Nozzle cleaning, Auto lubrication etc., is active before start of the cutting. Generally, during normal cutting, if any of the special functions are active, they will wait for M15 command where the tool will be up.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: M15</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_activation_of_g17_xy_plane_with_sheet_rotation">Activation of G17 (XY-Plane) with Sheet rotation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Activates the XY-Plane with required rotation with respect to sheet, such that the program is also rotated during cutting and the jobs are fitted within the rotated sheet.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G17 D=SheetRotation</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>From the Edge detection function, the rotation of sheet is calculated</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_program_header_example">Program Header Example:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong><em>%1 (PP_Sample_Pgm.DIN)</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>CNC_ID=1 (Only for Tandem Operation)</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Sheet_Size_X = 120</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Sheet_Size_Y = 600</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Job_Size_X = 105</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Job_Size_Y = 573</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>X_Limit_Minus = 10</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>X_Limit_Plus = 115</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Y_Limit_Minus = 10</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Y_Limit_Plus = 583</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>G90</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>M50 (Only for Tandem Operation)</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>M15</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>G17 D=SheetRotation</em></strong></p>
+</div>
+</div>
+</div>

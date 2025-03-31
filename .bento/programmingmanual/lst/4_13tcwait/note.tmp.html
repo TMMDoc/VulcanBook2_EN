@@ -1,0 +1,65 @@
+<div class="paragraph">
+<p>The function is optional.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Function</strong> | a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong></p>
+</div>
+<div class="paragraph">
+<p>|<strong>Time</strong> | a|
+Time indication in seconds.
+| | a|
+Tab. 5-10</p>
+</div>
+<div class="paragraph">
+<p><strong>1.4 G823 (FlyLine)</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong>
+Programming a contour-related beam suppression.
+With the G823 function, the laser beam can be suppressed in relation to the block. At the same time, the beam at the block transition is switched off unsupported. If another travel block without a G823 function follows a travel block with this function, the beam will be ignited at the block transition unsupported. The respective process parameters remained unchanged thereby. At the same time, the beam suppression is not restricted to linear blocks.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>
+=
+The G823 function is assigned to a group of G commands. Only one G command may be used from this group within an NC block. The G commands G820 – G829 belong to this group.
+■ The function only becomes effective if the laser processing was previously activated by TC_LASER_ON.
+■ A piercing process must be possible without axis standstill when the material is selected or the material thickness is selected.
+■ Depending on the machine, FlyLine can be used for various material thicknesses (for exact information on the material thickness, see the data collection for the machine concerned).
+Sample contour perforation seam Fig. 5-1</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N100 a|
+G01 G90 X10 Y10
+|N110 a|
+TC_LASER_ON(5,"4711",0,100)
+Laser ON.
+|N120 a|
+|N130 a|
+X30 G823
+|N140 a|
+|N150 a|
+X50 G823
+|N160 a|
+|N170 a|
+TC_LASER_OFF(3)
+=</p>
+</div>

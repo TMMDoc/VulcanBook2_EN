@@ -36,20 +36,10 @@ whole sheet</p>
 <p>There is a offline measurement and a online measurement possible:</p>
 </div>
 <div class="paragraph">
-<p><strong>offline</strong>:  the Offline measurement will be done in the following cases</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Start of the first program after the machine power ON equivalent to "Laser Standby" button pressed.</p>
-</li>
-<li>
-<p>During online measurement, if found glass contaminated or contamination possible then will do it at the start of every program until the glass is Clean</p>
-</li>
-</ul>
+<p><strong>Offline measurement</strong> is for checking glass quality under stable condition. When doing offline measuring three different levels of laser power will be emissioned each for certain time period, typical 500ms. Then the reflection light from glass will be measure for each power and the normalized reflection luminosity will be calculated and compared with the reference, which is also measured and calculated with the same way. Offline broken factor will be involved in this calculation to determine the quality of glass. For same reflection lumi value, higher the broken factor, higher the quality, so only when glass is more dirty can cause warning or error.</p>
 </div>
 <div class="paragraph">
-<p><strong>online</strong>: tbed</p>
+<p><strong>Online measurement</strong> is for checking glass quality during cutting. Whenever there is laser output, average value of a period time of reflection will be calculated and a low-pass filter will be applied on this value. Also online broken factor will be considered to get final glass quality. Due to unstable laser output and back reflection from cutting sheet, online broken factor is significant higher than offline.</p>
 </div>
 <div class="paragraph">
 <p>The parametrization is done in the setting page:</p>

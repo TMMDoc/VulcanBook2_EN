@@ -1,0 +1,90 @@
+<div class="paragraph">
+<p>The function is available for 2D laser machines of the TruLaser Series 5000 and TruLaser Series 3000 with the Siemens Solution-Line 840D control.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong>
+The TC_LABEL cycle can be used to identify workpieces with the following labels:
+■ Data Matrix Code.
+■ Plain text.
+TC_LABEL
+=
+■ LabelGroup ID: Parameter ID 10 (consecutive number of the part) from the PARTS_IN_PROGRAM_POS table.
+■ TC_LABEL is in the main program.
+Identifying parts</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>LABEL_DATA technology table parameters</strong> | | | |</p>
+</div>
+<div class="paragraph">
+<p>|<strong>ID</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Unit</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|10 a|
+LabelGroupID
+| | a|
+Each different label has a number (LabelGroupID). A data record for the LABEL_DATA table contains the parameters for a label.
+If multiple labels are to be applied to a part, there are multiple data records for one LabelGroupID.
+If a label is to be applied to multiple parts, the same LabelGroupID is called up in multiple PARTS_IN_PROGRAM_POS data records.
+| | a|
+Number of the first label.
+| | a|
+Number of the nth label.
+|20 a|
+Sequence
+Indicates the sequence in which the labels are to be applied to the part (if there are multiple data records for one LabelGroupID).
+|30 a|
+Offset X position
+Indicates the X position of the left lower corner of the circumscribing rectangle of the label relative to the center of gravity of the part in the part coordinate system (PARTS_IN_PROGRAM_POS).
+|40 a|
+Offset Y position
+Indicates the Y position of the left lower corner of the circumscribing rectangle of the label relative to the center of gravity of the part in the part coordinate system (PARTS_IN_PROGRAM_POS).
+|50 a|
+Offset angle
+Indicates the angular position of the label relative to the part coordinate system
+(PARTS_IN_PROGRAM_POS), relative to the left lower corner of the circumscribing rectangle of the label.
+|60 a|
+Label text
+Text to be printed on the parts copy.
+|70 a|
+Label box length X
+Maximum expansion of the label in the X direction in the label coordinate system.
+|80 a|
+Label box length Y
+Maximum expansion of the label in the Y direction in the label coordinate system.
+|90 a|
+Label type
+| | a|
+Type of identification.
+| | a|
+Text (label text is Base64 coded).
+| | a|
+Data Matrix Code (Label text is Base64 coded).
+|110 a|
+Text height
+Height of the proposed text. The cap height is given (height of the capital letters).
+=
+Tab. 5-18
+Identifying parts</p>
+</div>
+<div class="paragraph">
+<p><strong>3. Multiple program structure: pre-cut part, trimming cut, contour, separating cut</strong></p>
+</div>

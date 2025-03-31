@@ -1,0 +1,23 @@
+<div class="paragraph">
+<p>The Technology Table will contain all the parameters (details in further chapters) required for Laser cutting, depends on Material type, Thickness etc., Hence for the selected program, the TT need to be transferred to the controller via the P-array parameters by the HMI.
+Hence the program need to contain the information about the material type and thickness, such that it is transferred to HMI to select the parameters from the database.
+Using G253 command with E0, the information is passed to PLC from the DIN program, followed by H0 command which will send a message to HMI with all required data of TT and will be waiting for the acknowledgement from HMI for the successful transfer of parameters. It will be executed at the start of the program for one time.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax:</em></strong> <strong><em>G253 F=”TT:MS_1mm_O2_NONE_NONE_1.2mm” E0</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>H0</em></strong>
+The data in the inverted colons refer as follow:
+<em>TT – Technology Table</em>
+<em>MS – Material Type (will be varied depends on the selection of material)</em>
+<em>1mm – Material Thickness (will be varied depends on the selection of thickness)</em>
+<em>O2 – Gas type</em>
+<em>Surface Treatment – None</em>
+<em>Film coating – None</em>
+<em>Nozzle Diameter – 1.2mm</em>
+<em>E0 – PLC will read the Message and transfer the data to Vulcan via ‘HMIAppMsg’ to transfer the TT to P-fields</em></p>
+</div>
+<div class="paragraph">
+<p>For more information refer <strong><em>“Laser Parameters in DIN program”</em></strong> manual.</p>
+</div>

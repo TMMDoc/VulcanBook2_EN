@@ -1,0 +1,214 @@
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Laser method</strong>
+With the TC_LASER_ON cycle call-up, the following machine commands are executed independently of the entered cycle parameters:
+■ Switch on the distance regulation system.
+■ Select piercing gas.
+■ Move Z axis to piercing position.
+■ Switch on beam for piercing.
+■ Select the cutting gas.
+■ Move Z axis to cutting position.
+■ Switch on beam for cutting.
+■ Select focal position.
+■ Select beam diameter.
+■ Select laser power.
+TC_LASER_ON (Laser method,"Technology table",piercing type,cutting type)
+■ The parameters of the technology table for TC_LASER_ON for different materials and material thicknesses are available at the machine control. The name of the suitable technology table must be specified at the time of programming.
+■ If pure cutting or piercing cycles are called up, the value "0" must be entered for the cycle parameter "Piercing type" or "Cutting type".
+■ Is deleted by TC_LASER_OFF.
+The following laser methods are available:</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Laser method</strong> | a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong>
+|1 or 9 | a|
+Piercing and cutting with distance regulation.
+|2 or 10 | a|
+Piercing and cutting without distance regulation.
+|3 | a|
+Piercing without distance regulation, cutting with distance regulation.
+|4 | a|
+Piercing with distance regulation, cutting without distance regulation.
+|5 or 11 | a|
+Cutting with distance regulation.
+|6 or 12 | a|
+Cutting without distance regulation.
+|7 | a|
+Piercing with distance regulation, beam OFF.
+|8 | a|
+Piercing without distance regulation, beam OFF.
+|30 | a|
+Microweld
+=
+Tab. 5-1</p>
+</div>
+<div class="paragraph">
+<p><strong>Piercing type</strong> Cycle parameters: data is selected from the active technology table via the piercing type. Several piercing types are stored there:</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Number</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong>
+No piercing
+|10 a|
+Normal piercing
+|11 a|
+Gentle piercing
+|20 a|
+Dot punch marking
+|30 a|
+Special processing hard Microweld
+|31 a|
+Special processing soft Microweld
+=
+Tab. 5-2</p>
+</div>
+<div class="paragraph">
+<p><strong>Cutting type</strong> Cycle parameters: Data is selected from the active technology table via the cutting type. Cutting data (e. g. laser output, cutting and approach parameters) is stored there for different machining requirements. Differences are as follows:
+■ Size, medium or small contour.
+■ Normal or reduced cutting speed.
+■ Normal or reduced acceleration values.
+The cutting type is selected using a three-digit number, whereby each digit has a particular significance:</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>1st digit: contour</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>2nd digit: cutting speed</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>3rd digit: acceleration</strong>
+|1 = large contour a|
+0 = normal
+0 = normal
+|2 = medium contour a|
+1 = reduced from piercing hole
+1 = reduced
+|3 = small contour a|
+2 = high
+=
+Tab. 5-3</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Example</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Significance</strong>
+No cutting.
+|100 a|
+Cut large contour at normal acceleration.
+|101 a|
+Cut large contour at reduced acceleration.
+|200 a|
+Cut medium contour at normal acceleration.
+|210 a|
+Cut medium contour at reduced approach speed from the piercing hole and normal acceleration.
+|211 a|
+Cut medium contour at reduced approach speed from the piercing hole and reduced acceleration.
+|310 a|
+Cut small contour at reduced approach speed from the piercing hole and normal acceleration.
+=
+Examples standard cutting types Tab. 5-4
+In addition to these standard cutting types, there are also 3 special cutting types:</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Cutting with "floating data exchange"</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Advantages</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Example for machines with TruFlow</strong></p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Special cutting type</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Significance</strong>
+|400 a|
+Special processing: vaporization.
+|500 a|
+Special processing: marking.
+|600 a|
+Special processing: geometric punch marking.
+=
+Special cutting types Tab. 5-5</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>TC_LASER_ON(1,"1778",10,100)</strong> |
+|Laser method 1 a|
+Piercing and cutting with distance regulation.
+|Piercing type 10 a|
+Normal piercing.
+|Cutting type 100 a|
+Cut large contour at normal acceleration.
+=
+Tab. 5-6
+With laser methods 5 or 11 and 6 or 12, cutting with "floating data exchange" can be programmed. If a further
+TC_LASER_ON instance is programmed with methods 5 or 11
+and 6 or 12 and the beam has already been ignited, switching over can be done as follows:
+■ Switch among the various cutting data within a technology table (e. g. due to a contour change).
+■ Switch among the various technology tables.</p>
+</div>
+<div class="paragraph">
+<p>No axis stop is necessary in case of modifications of laser power and gating frequency as well as for minor modifications of cutting parameters such as gas pressure, gating frequency, and cutting distance. The switch will be made to the new parameters <strong>during the machining</strong>.
+■ No pits due to reduction of the cutting speed during data exchange.
+■ Faster processing due to "floating data exchange".</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N100 a|
+TC_LASER_ON(1,"1778",
+10,100)
+Piercing and cutting large contours.
+|N110 a|
+G01 X20 Y40
+|N120 a|
+TC_LASER_ON(5,"1778",
+0,300)
+"Floating data exchange": Cut small contour.
+|N130 a|
+G02 I0 J10
+|N140 a|
+TC_LASER_OFF(1)
+=
+Tab. 5-7</p>
+</div>

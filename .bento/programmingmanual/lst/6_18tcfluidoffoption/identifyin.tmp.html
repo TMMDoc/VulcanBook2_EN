@@ -1,0 +1,85 @@
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong>
+Variable text can be engraved on the workpiece with the TC_WRITE cycle.
+The TC_WRITE cycle outputs the text at the current position in positive X direction. The laser technology table, the font height in mm and the text direction in degrees can be changed via the cycle&#8217;s corresponding transfer parameter.</p>
+</div>
+<div class="paragraph">
+<p><strong>Notes</strong>
+■ Plane processing should be selected for round tubes.
+■ The function is available for 2D laser machines with the "Siemens Solution-Line 840D" control.
+TC_WRITE(T_TEXT,T_TABNAME,T_HEIGHT,T_ANGLE)
+■ TC_WRITE must be programmed before contour machining (TC_LASER_ON).
+|</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Parameter</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Value</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong>
+|T_TEXT a|
+Text to be engraved on the workpiece (max. 255 characters).
+|T_TABNAME a|
+Name of the laser technology table.
+|T_HEIGHT a|
+Font size in mm or inch.
+|T_ANGLE a|
+Default value: 0°
+Optional parameter for text rotation in degrees.
+=
+Transfer parameters Tab. 5-16</p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong> TC_WRITE("Teil Nr. 17","TTBC-8252O2",5,0)
+Fig. 5-2
+Identifying parts</p>
+</div>
+<div class="paragraph">
+<p><strong>Counting parts using a</strong> ■ int actNumber = 13 <strong><sup>variable</sup></strong> TC_WRITE("Part No.: ”&lt;&lt; actNumber,"TTBC-8252O2",10,0)</p>
+</div>
+<div class="paragraph">
+<p><strong>Special macros</strong> The following macros are stored at the machine. They allow production information to be output (date and/or time of the production of a workpiece):</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Macro</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Example</strong>
+Engrave name of the current main program.
+TM_MAINPROG
+TC_WRITE(TM_MAINPROG,"TTBC-8252O2",
+Engrave current time. Format:
+hh:mm:ss.
+TM_TIME
+TC_WRITE(TM_TIME,"TTBC-8252O2",10,0)
+Engrave current date.
+Metric format:
+■ dd.mm.yyyy
+Inch format:
+■ mm/dd/yyyy
+TM_DATE
+Metric programming:
+■ TC_WRITE(TM_DATE,"TTBC-8252O2",10,0) Inch programming:
+■ TC_WRITE(TM_DATE, "TTBC-8252O2",
+0.393,0)
+Engrave time and current date (formatting depends on the unit of measurement).
+TM_TIMEDATE
+Metric programming:
+■ TC_WRITE(TM_TIMEDATE,"TTBC-8252O2",
+Inch programming:
+■ TC_WRITE(TM_TIMEDATE,"TTBC-8252O2",
+0.197,0)
+=
+Tab. 5-17</p>
+</div>

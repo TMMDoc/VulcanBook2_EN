@@ -1,0 +1,96 @@
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Microjoints</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong>
+Microjoints are microwebs that could usually be programmed only with the programming system TruTops. The microjoints defined in this way are permanently anchored in the NC program. They cannot be modified or deselected during the machining of parts at the machine.
+Depending on the machine, it may also be possible to program microjoints directly on the machine and select or deselect them as required. There are two different types of microjoints:</p>
+</div>
+<div class="paragraph">
+<p>■ <strong>Programmed microjoints</strong> that are defined within the contour or at the end of the contour via G functions. The contour is marked here directly in the NC text for the part program.</p>
+</div>
+<div class="paragraph">
+<p>■ <strong>Automatic microjoints</strong> that are always set at the end of the contour and defined without G functions. The definition is made here via the dimension of the contour in X- and Ydirection. The contour is not marked in the NC text.
+The following points are valid:
+■ Microjoints that can only be modified at the machine are only possible on the machine on surfaces of rectangular tubes or for plane processing.
+■ The data for programmed microjoints is stored in a programspecific table. The data can be displayed and modified via the user interface of the control. This table can be used to activate and deactivate the microjoint types separately. The table is called up using the NC cycle TC_MICROJOINT ("table name").
+■ The activation status of the microjoints in the table is stored with the program. In this way, an available program is guaranteed to be processed under the same conditions after every program change, even when fully automatic systems are used.
+Call up table with microjoint data directly at the control system and activate or deactivate programmed- or automatic microjoints in the NC text.
+=
+The cycle TC_MICROJOINT in the NC program calls up the table containing all the parameters and the activation status of the functions. Data can be modified in the table. The modified table is updated automatically in the NC core.</p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong> TC_MICROJOINT("Table name"):
+■ Self-holding (modal) operation.
+■ Call up as early as possible before the required contour machining.
+■ Is deselected using program end or with the selection of a new table.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>MICROJOINT technology table parameters</strong> | | | |</p>
+</div>
+<div class="paragraph">
+<p>|<strong>ID</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Parameter</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Values</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Unit</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|10 a|
+Table identifier
+Name of the table, e.g. "MIJO-1"
+|100 a|
+Programmed Micro-
+Joints active
+Programmed MicroJoints not active
+| | a|
+Programmed MicroJoints active
+|110 a|
+Automatic Microjoints active
+Automatic Microjoints not active
+| | a|
+Automatic Microjoints active
+|120 a|
+Large MicroJoint small contour
+Microjoint size small contour
+|130 a|
+Large MicroJoint medium contour
+Microjoint size medium contour
+|140 a|
+Large MicroJoint large contour
+Microjoint size large contour
+|150 a|
+Min. contour dimension in X
+Min. contour dimension in X
+|160 a|
+Max. contour dimension in X
+Max. contour dimension in X
+|170 a|
+Min. contour dimension in Y
+Min. contour dimension in Y
+|180 a|
+Max. contour dimension in Y
+Max. contour dimension in Y
+|190 a|
+Piercing type after Microjoints (PiercingTypeAfterMicrojoint)
+| | a|
+Piercing type after Microjoints
+| | a|
+Normal piercing
+| | a|
+Gentle piercing
+=
+Tab. 5-29</p>
+</div>

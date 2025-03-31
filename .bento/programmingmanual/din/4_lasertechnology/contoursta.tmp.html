@@ -1,0 +1,206 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_stop_pre_processing">Stop Pre-processing</a></li>
+<li><a href="#_contour_lead_in_length">Contour Lead-In length</a></li>
+<li><a href="#_activate_kerf_compensation_g41g42">Activate Kerf compensation (G41/G42)</a></li>
+<li><a href="#_approach_contour_g0g1">Approach Contour (G0/G1)</a></li>
+<li><a href="#_laser_on_function_m14">Laser ON Function (M14)</a></li>
+<li><a href="#_process_contour_g1_g2_g3">Process Contour (G1, G2, G3…,)</a></li>
+<li><a href="#_laser_off_function_m15">Laser OFF Function (M15)</a></li>
+<li><a href="#_cancel_kerf_compensation">Cancel Kerf Compensation</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This part of NC code contains the axis motion blocks and before that it prepares the above blocks with all required parameters ready to process the contour. They are further classified as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Stop Pre-processing (G61)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Contour Lead-In length (Lead_In)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Activate Kerf compensation (G41/G42)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Approach contour (G0/G1)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Laser ON function (M14)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Process contour (G1, G2, G3)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Laser OFF function (M15)</em></strong></p>
+</li>
+<li>
+<p><strong><em>Cancel Kerf compensation (G40)</em></strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stop_pre_processing">Stop Pre-processing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong><em>G61</em></strong> function can be used for temporarily stopping the block preparation of the interpreter. This means that the interpretation of the next block is stopped until the last block in the coarse interpolator&#8217;s job buffer has been processed.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G61</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contour_lead_in_length">Contour Lead-In length</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Laser technology, each contour is processed with some lead-in for better finish of the contour. It is possible to process the lead-in length with different laser parameters and it is activated via cutting method as explained above.</p>
+</div>
+<div class="paragraph">
+<p>The lead-in length value is stored in the P-fields and for better understanding the P- field is <strong><em>globally declared</em></strong> <strong><em>internally</em></strong> in the program as follows:</p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Lead_In P1908</em></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: Lead_In = 5.0</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_activate_kerf_compensation_g41g42">Activate Kerf compensation (G41/G42)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In Laser technology, the width of the beam diameter need to be compensated in order to achieve the perfect dimensions of the contour. Depends on the size of contour defined in the program, the kerf will be changed.</p>
+</div>
+<div class="paragraph">
+<p>The Kerf-width value is stored in the P-fields and for better understanding the P- field is <strong><em>globally declared</em></strong> <strong><em>internally</em></strong> in the program as follows:</p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* Kerf P1300</em></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G41 R = Kerf E0</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_approach_contour_g0g1">Approach Contour (G0/G1)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The approach contour starts the actual motion of the axis and use the rapid traverse command <strong><em>G0</em></strong> or Linear command <strong><em>G1</em></strong> to position the axis to the piercing point. During this motion, the head is positioned along with the tool offset value (kerf width) The approach point can be reached with single statement by simultaneous interpolation of the axis, there may be a case where it may take more than one statement is also possible.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G0/G1 X0 Y0</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Note: The approach contour should be always followed by M14 command for the ‘Frog Jump’ function of head.</em></strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_laser_on_function_m14">Laser ON Function (M14)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Laser ON function is called via M-command “<strong>M14</strong>”. The call of M14 will activate the following functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Switch on the Height regulation control</p>
+</li>
+<li>
+<p>Switch on the Piercing Gas solenoid &amp; pressure valve</p>
+</li>
+<li>
+<p>Move the Z-axis to Piercing Position</p>
+</li>
+<li>
+<p>Switch on the Laser beam for Piercing</p>
+</li>
+<li>
+<p>Switch to the Cutting Gas parameters</p>
+</li>
+<li>
+<p>Move the Z-axis to Cutting Position</p>
+</li>
+<li>
+<p>Set focal position</p>
+</li>
+<li>
+<p>Set Beam diameter</p>
+</li>
+<li>
+<p>Set Laser power</p>
+</li>
+<li>
+<p>Switch on the Laser beam for Cutting</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: M14</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_process_contour_g1_g2_g3">Process Contour (G1, G2, G3…,)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The complete set of contour statements between <strong>M14 &amp; M15</strong> constitutes the process contour, where the actual laser technology take place. It is possible to identify the Acc/Dec phase, Corner, End of approach etc., for the complete process of contour.</p>
+</div>
+<div class="paragraph">
+<p>Also, before the start of contour statements, it is possible to define the type of process as Cutting/Marking for DIN program display in HMI as dashed lines. <strong><em>Please refer the Chapter 2.6 for more details.</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G1 X124.5 Y35.5</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>G3 X115.5 Y35.5 I-4.5 J0</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_laser_off_function_m15">Laser OFF Function (M15)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Laser OFF function is called via M-command “<strong>M15</strong>”. The call of M15 will activate the following functions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Switch Off the Laser beam</p>
+</li>
+<li>
+<p>Switch Off the Gas</p>
+</li>
+<li>
+<p>Retract the Z-axis to defined position
+No other M-function must be set before a M15. The M15 must always be set after a positioning block/contour block.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cancel_kerf_compensation">Cancel Kerf Compensation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The activated Kerf compensation at the start of contour need to be cancelled at the end in order to position the head for the next contour without compensation.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: G40 E1</em></strong></p>
+</div>
+</div>
+</div>

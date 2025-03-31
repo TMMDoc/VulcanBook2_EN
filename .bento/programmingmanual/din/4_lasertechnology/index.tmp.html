@@ -1,0 +1,97 @@
+<div class="paragraph">
+<p>Depends on the technology, the DIN program structure can be modified to suit the requirements of the user. Using the Laser Core 800 CNC controller, a DIN program for the Laser technology is composed of following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Program Header</em></strong></p>
+</li>
+<li>
+<p><strong><em>Technology Table Transfer</em></strong></p>
+</li>
+<li>
+<p><strong><em>Check for Boundary program active</em></strong></p>
+</li>
+<li>
+<p><strong><em>Block Jump</em></strong></p>
+</li>
+<li>
+<p><strong><em>Block Number</em></strong></p>
+</li>
+<li>
+<p><strong><em>Start of a Part Information</em></strong></p>
+</li>
+<li>
+<p><strong><em>Laser parameters selection &amp; Update</em></strong></p>
+</li>
+<li>
+<p><strong><em>Contour statements</em></strong></p>
+</li>
+<li>
+<p><strong><em>Program End</em></strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Example Program:</em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 49%;">
+<col style="width: 51%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">%1 (PP_Sample_Pgm.DIN)_
+<em>CNC_ID=1</em>
+<em>Sheet_Size_X = 120</em>
+<em>Sheet_Size_Y = 600</em>
+<em>Job_Size_X = 105</em>
+<em>Job_Size_Y = 573</em>
+<em>X_Limit_Minus = 10</em>
+<em>X_Limit_Plus = 115</em>
+<em>Y_Limit_Minus = 10</em>
+<em>Y_Limit_Plus = 583</em>
+<em>G17 D=SheetRotation</em></th>
+<th class="tableblock halign-center valign-top">Program Header
+<em>G253 F="TT:MS_1mm" E0</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology Table Transfer</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>CheckBoundPrg</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Check for Boundary program active</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>G20 X1</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Block Jump
+BlockNo=1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Block Number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">M01</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Start of a part information if any
+PM=20.000 CM=100.000
+EM=1.000 ZRH=20
+Update_Param</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laser parameters selection &amp; Update
+Lead_In=4.374
+G41 R=Kerf E0
+G0 X57.018 Y461.5
+M14 (Laser ON)
+G1 X59.395 Y459.163
+G3 X60.333 Y459.167 I0.467 J0.475
+G3 I-2.828 J2.828
+M15 (Laser OFF)
+G40 E1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Contour Statements
+N65535
+CallBoundPrg</p></td>
+</tr>
+</tbody>
+</table>

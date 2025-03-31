@@ -1,0 +1,642 @@
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Introduction to LST programming format</strong></p>
+</li>
+<li>
+<p><strong>Identification of Main Program in LST</strong>
+From the LST file the main program is identified with the set of text that starts with ‘HP’ and ends with M30.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image2.png" alt="A screenshot of a computer program Description automatically generated" width="457" height="305"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="2">
+<li>
+<p><strong>Identification of Sub programs in LST</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In the LST file, the sub programs are called from the main program with the syntax <strong>“SP@”</strong>, where @ is the number of sub program, eg: SP1 will call the respective sub program!</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image3.png" alt="A screenshot of a computer program Description automatically generated" width="399" height="312"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="3">
+<li>
+<p><strong>List of Cycle Programs</strong>
+The cycle programs are pre-defined in the LST to perform a specific function in the program and the list is as follows:</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S.No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN support</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_POS_LEVEL(40)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates the Head position with the given value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_TECH(“SHT-1”)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_LOAD(“SHT-1”)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_MICROJOINT(“MIJO-1”)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds the soft micro joint with given parameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_ON(params)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switches the LASER beam ON with given technology table</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASERCORR_ON(T_LEFT)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activates the tool radius compensation G41/G42 with given value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_OFF(param)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switched the LASER beam OFF &amp; moves the head up with given parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_PART_END(param)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LEAD_IN(params)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds the Lead In after soft micro joint with given parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_WRITE(params)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marks the text with given parameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SYNC_POS_SUPPRESS_ON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deactivates Frog jump</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SYNC_POS_SUPPRESS_OFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activates Frog jump</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_THICK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position the head with the previous height before the remnant cut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_Wait(param)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Laser Cycle for Corner cooling to prevent burning in. The laser beam is switched OFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Note: The list will be updated with new entries, implementation in DIN , etc.,</em></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="4">
+<li>
+<p><strong>List of Special commands</strong></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S.No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN support</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ROT RPL=90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotates the contour by 90 deg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ROT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cancel the contour rotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FLIN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feed rate varies linearly</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FNORM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feed rate normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Incremental command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p><strong>Abstract of DIN conversion</strong>
+From the LST file, only the main &amp; sub-programs are converted to DIN format with the cycle programs defined very similar to LST.</p>
+</li>
+<li>
+<p><strong>Main program:</strong>
+The main program is defined in the DIN with N-blocks in ascending order and should not be repeated in the same program, also the end of the main program is terminated via G99.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image4.png" alt="A screenshot of a computer program Description automatically generated" width="580" height="355"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="2">
+<li>
+<p><strong>Sub-programs:</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The sub programs are called from the main program using the syntax <strong>“G22 J@”</strong>, where @ is the number of the N-block defined for the start of Sub-program within the same program.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image5.png" alt="A screenshot of a computer program Description automatically generated" width="337" height="261"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="3">
+<li>
+<p><strong>Cycle programs:</strong>
+The cycle programs of LST are defined very similar in DIN with limitation to parameter transfer.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LST format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_POS_LEVEL(40)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_POS_LEVEL R[40]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_TECH(“SHT-1”)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_LOAD(“SHT-1”)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_THICK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SHEET_THICK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_MICROJOINT(“MIJO-1”)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_ON(1,"ST010MD0-N2SF-30-2",10,100)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G253 F="TT2: ST010MD0-N2SF-30-2" E0<br>
+TC_LASER_ON R[1;10;100]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASERCORR_ON(T_LEFT)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASERCORR_ON R[T_LEFT]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_OFF(1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_OFF R[1]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_PART_END(1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LEAD_IN("LI-1",T_LEFT)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SYNC_POS_SUPPRESS_ON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SYNC_POS_SUPPRESS_ON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SYNC_POS_SUPPRESS_OFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_SYNC_POS_SUPPRESS_OFF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_WRITE("Teil2_Mittel_Schwer","ST030MD0-O2S0-30-2",5,-90)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G253 F="TT2: ST030MD0-O2S0-30-2" E0<br>
+H100<br>
+G253 F=” Teil2_Mittel_Schwer” E0<br>
+TC_WRITE R[5;-90;0]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_Wait(1,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_Wait R[1,2]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="4">
+<li>
+<p><strong>Special commands</strong></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LST format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ROT RPL=90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G89 C=90</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ROT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G89</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G01 X=IC(0.001)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G01 X=0.001 I2</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="5">
+<li>
+<p><strong>TC_UPDATE_PARAM:</strong>
+A new cycle program called “TC_UPDATE_PARAM” was added for DIN format to extract the information such as LTT, Laser method, Pierce type, Cutting type of the contour from the TC_LASER_ON well in advance, so that the parameters are updated in the traverse motion.
+Additionally the Fly-cut, Micro joints, Nano joints, etc., information are also indicated in 4<sup>th</sup> parameter as bit wise:
+Bit0 – Fly cut active
+Bit1 – Micro-Joint active
+Bit2 – Nano-Joint active
+5<sup>th</sup> parameter – Defines the MJ length.
+6th parameter – Defines the NJ stability.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LST format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_ON(1,"ST010MD0-N2SF-30-2",10,100)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G253 F="TT2: ST010MD0-N2SF-30-2" E0<br>
+TC_UPDATE_PARAM R[1;10;100;0;0;0]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="6">
+<li>
+<p><strong>Start of Contour – M1014:</strong>
+The start of each contour was indicated as “M1014” to activate the fast outputs depends on the traverse distance, will be used for Frog Jump function, update of parameters, etc.,</p>
+</li>
+<li>
+<p><strong>End of Contour – M1015:</strong>
+The start of each contour should be ended using “M1015” to deactivate the fast outputs depends on the last contour distance, will be used for Soft micro joints, change of cut parameter at end, etc.,</p>
+</li>
+<li>
+<p><strong>Process flow of DIN conversion:</strong></p>
+</li>
+<li>
+<p><strong>In Main program:</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Gather all the traverse commands followed by sub program call before TC_LASER_OFF.</p>
+</li>
+<li>
+<p>Before the start of traverse command, add G253 parameter extracted from TC_LASER_ON of the SP1 sub program call.</p>
+</li>
+<li>
+<p>Now check for the TC_WRITE call before TC_LASER_ON at the beginning of the SP1 sub program. if present, then jump to the sub program call (point 2)</p>
+</li>
+<li>
+<p>If no TC_WRITE, then add TC_UPDATE_PARAM with the parameters extracted from TC_LASER_ON of the sub program call.</p>
+</li>
+<li>
+<p>After the end of traverse command or before the sub program call, add the “M1014” to indicate the start of contour.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>In Sub program:</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>As flow start from the main program, the M1014 in main program should be ended by M1015 in the sub program before the TC_LASER_OFF.</p>
+</li>
+<li>
+<p>For next TC_LASER_ON command, add G253 &amp; TC_UPDATE_PARAM before the traverse command, if the LTT is same then ignore the G253 command.</p>
+</li>
+<li>
+<p>After the end of traverse command or before the TC_LASER_ON, add the “M1014” to indicate the start of contour.</p>
+</li>
+<li>
+<p>Please note for single contour, there may be multiple TC_LASER_ON and the above 2 points (b &amp; c) are only valid if M1014 is not added for that contour.</p>
+</li>
+<li>
+<p>For the added M1014, the M1015 command should be added before the TC_LASER_OFF.</p>
+</li>
+<li>
+<p>Jump to Point b.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Contour Rotation:</strong></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LST format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN format
+N80 G90
+N110 G01 X877.551 Y10</p>
+<p class="tableblock"><strong>N120 ROT RPL=90</strong>
+N130 SP1</p>
+<p class="tableblock"><strong>N140 ROT</strong>
+N80 G90
+N110 G01 X877.551 Y10</p>
+<p class="tableblock"><strong>N120 G89 C=90 (rotate contour XY plane)</strong>
+N130 G22 J251 (SP1)</p>
+<p class="tableblock"><strong>N140 G89 (cancel the rotation)</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p><strong>Fly cut:</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Fly cut – G823 command in contour will activate the Fly cut in TC_UPDATE_PARAM as <strong>4<sup>th</sup> parameter Bit0=1.</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 56%;">
+<col style="width: 44%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">LST format</th>
+<th class="tableblock halign-left valign-top">DIN format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G01 X0 Y-9.526 G823 (contour contains G823, Fly cut active)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_UPDATE_PARAM R[5;0;100;1;0;0]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p><strong>TC_WRITE:</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>TC_WRITE("Teil2_Mittel_Schwer","ST030MD0-O2S0-30-2",5,-90)</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>TC_LASER_OFF(1)</strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 49%;">
+<col style="width: 51%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong><em>LST code</em></strong></th>
+<th class="tableblock halign-left valign-top"><strong><em>Explanation</em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teil2_Mittel_Schwer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text to be written</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ST030MD0-O2S0-30-2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology table to be used</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text height in mm</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text direction in degrees</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Conversion to Din as follows:</em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 53%;">
+<col style="width: 47%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">DIN code</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G253 F="TT2: ST030MD0-O2S0-30-2" E0<br>
+H100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer of TT followed by H100. If there is no change in TT, then ignore this 2 lines!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G253 F=” Teil2_Mittel_Schwer” E0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text to be written is transferred via G253 command to the PLC</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_WRITE R[5;-90;0]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_WRITE is called with following parameters:<br>
+5 – text height in mm<br>
+-90 – text height in degrees<br>
+0 – text box length (default 0)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_LASER_OFF R[1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Switch Off the laser and move the head up to the defined position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">G253 F="TT2: ST030MD0-O2S0-30-2" E0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In above, the G253 command is used for the text to be written, so for the next TC_UPDATE_PARAM then again add the TT transfer, else there will be error!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p><strong>Incremental Command (IC):</strong></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LST format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIN format
+N70 G01 X=IC(-0.001)
+N80 G03 I0.001
+N100 G01 X=IC(0.001)</p>
+<p class="tableblock">N70 G01 X=-0.001 <strong>I2</strong>
+N80 G03 X0 Y0 I0.001 J0</p>
+<p class="tableblock">N100 G01 X=0.001 <strong>I2</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p><strong>Soft Micro-Joints &amp; Nano-Joints:</strong>
+The Micro-joints &amp; Nano-Joints information are defined in the LST under the MICROJOINT table as shown below.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/image6.png" alt="A screenshot of a computer program AI-generated content may be incorrect." width="415" height="274"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Activation of MJ &amp; NJ in TC_UPDATE_PARAM – 4<sup>th</sup> parameter as follows:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Bit1 – Micro-Joint active.</p>
+</li>
+<li>
+<p>Bit2 – Nano-Joint active.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Micro joints – Combination of TC_MICROJOINT(“MIJO-1”) &amp; G821 command in contour, the length of micro joint depends on Contour type is defined in the TC_UPDATE_PARAM <strong>– 5<sup>th</sup> parameter.</strong></p>
+</li>
+<li>
+<p>Nano joints stability is defined in the TC_UPDATE_PARAM <strong>– 6<sup>th</sup> parameter.</strong></p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">LST format</th>
+<th class="tableblock halign-left valign-top">DIN format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Micro-Joints</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_MICROJOINT(“MIJO-1”) (Len = 0.7mm in table)
+G01 X0 Y99.5 G821 (contour contains G821)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TC_UPDATE_PARAM R[1;10;100;6;0.5;0]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nano-Joints</strong></p></td>
+</tr>
+</tbody>
+</table>

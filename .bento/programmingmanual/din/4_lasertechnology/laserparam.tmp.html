@@ -1,0 +1,403 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_piercing_method">Piercing Method</a></li>
+<li><a href="#_cutting_methods">Cutting Methods:</a></li>
+<li><a href="#_ending_methods">Ending Methods:</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before the start of processing the Laser technology for a contour, it is important to select the suitable parameters for the particular contour and update it. These parameters will be updated for every contours in the program.
+The functional parameters of Laser technology are as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Piercing Method (PM)</p>
+</li>
+<li>
+<p>Cutting Method (CM)</p>
+</li>
+<li>
+<p>Ending Method (EM)</p>
+</li>
+<li>
+<p>Z_Retract_Height (ZRH)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The parameter values are stored in the P-fields and for better understanding the P- fields are <strong><em>globally declared</em></strong> <strong><em>internally</em></strong> in the program as follows:</p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* PM P1904</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* CM P1905</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* EM P1906</em></p>
+</div>
+<div class="paragraph">
+<p><em>*#globdef* ZRH P1907</em></p>
+</div>
+<div class="paragraph">
+<p><em>*# globdef* Update_Param G22 L9400 (will call %9400 sub program to update parameters)</em></p>
+</div>
+<div class="paragraph">
+<p><strong><em><span class="underline">Parameter Structure:</span></em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>PM=20.000 CM=100.000</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>EM=1.000 ZRH=20</em></strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Update_Param</em></strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_piercing_method">Piercing Method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Piercing methods are defined based on the combination of different types of piercing available.</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The Piercing methods are defined as Floating numbers = 20.123</p>
+</li>
+<li>
+<p>The numbers before the decimal point represents the <strong>“Piercing ID”</strong></p>
+</li>
+<li>
+<p>The numbers after the decimal point represents the <strong>“Piercing AID”</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em><span class="underline">Piercing ID:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 13%;">
+<col style="width: 72%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>S. No.</strong></th>
+<th class="tableblock halign-center valign-top"><strong>ID</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Normal Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gentle Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Peck Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple Step Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiple Step + Peck Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Power varied Ramp Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Duty varied Ramp Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nozzle height varied Ramp Piercing</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dot Punch Piercing</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em><span class="underline">Piercing Aid:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 35%;">
+<col style="width: 32%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>1<sup>st</sup> digit: Height Ctrl, Beam OFF, Cool time</strong></th>
+<th class="tableblock halign-left valign-top"><strong>2<sup>nd</sup> digit: Side Air Blow, Burr Clean</strong></th>
+<th class="tableblock halign-center valign-top"><strong>3<sup>rd</sup> digit: Free</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = All Function disable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = All Function disable</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0 = All Function disable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit0 = 1 = Height Ctrl ON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit0 = 1 = Side Air Blow ON</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit1 = 1 = Beam ON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit1 = 1 = Burr Clean ON</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit2 = 1 = Cool time OFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit2 = 1 = Free</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For more information refer <strong><em>“Laser Parameters in DIN program”</em></strong> manual.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cutting_methods">Cutting Methods:</h2>
+<div class="sectionbody">
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The Cutting methods are defined based on process &amp; length of contours.</p>
+</li>
+<li>
+<p>The Cutting methods are represented as Floating numbers = 123.123</p>
+</li>
+<li>
+<p>The numbers before the decimal point represents the <strong>“Process Methods”</strong></p>
+</li>
+<li>
+<p>The numbers after the decimal point represents the <strong>“Miscellaneous Control”</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em><span class="underline">Process Methods:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 28%;">
+<col style="width: 42%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>1<sup>st</sup> digit: Process</strong></th>
+<th class="tableblock halign-left valign-top"><strong>2<sup>nd</sup> digit: Contour</strong></th>
+<th class="tableblock halign-left valign-top"><strong>3<sup>rd</sup> digit: Distance Regulation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = No process</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = Large contour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 – Height Control (HC) ON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 = Cutting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 = Medium contour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 – HC Freeze in Lead-In &amp; ON during Cutting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 = *Special Cutting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 = Small contour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 – HC ON Positive direction &amp; OFF Negative direction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 = Marking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 – Height Control (HC) OFF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 = *Special marking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 = Vaporization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em><span class="underline">Miscellaneous Control:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 34%;">
+<col style="width: 35%;">
+<col style="width: 31%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>1<sup>st</sup> digit: Lead IN, Hole &amp; Fly</strong></th>
+<th class="tableblock halign-center valign-top"><strong>2<sup>nd</sup> digit: Retrace</strong></th>
+<th class="tableblock halign-center valign-top"><strong>3<sup>rd</sup> digit: Free</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = All Function disable</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0 = All Function disable</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0 = All Function disable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit0 = 1 = Lead IN</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Bit0 = 1 = Lead IN Retrace</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit1 = 1 = Pre-Hole</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Bit1 = 1 = Remnant Cut</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit2 = 1 = Fly control</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For more information refer <strong><em>“Laser Parameters in DIN program”</em></strong> manual.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ending_methods">Ending Methods:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Ending methods are defined based on the retract distance of Z-axis along with the Frog jump, HC freeze, etc., at the end.</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The Ending methods are defined as Floating numbers = 20.123</p>
+</li>
+<li>
+<p>The numbers before the decimal point represents the <strong>“End ID”</strong></p>
+</li>
+<li>
+<p>The numbers after the decimal point represents the <strong>“End control”</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em><span class="underline">End ID:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 72%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top"><strong>S. No.</strong></th>
+<th class="tableblock halign-center valign-top"><strong>End ID</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Functions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beam OFF, Z-axis retract = P1906</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beam OFF, high voltage OFF, Z-axis to home position</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beam OFF, Z-axis remains at the same processed height for the next process. Internally in the PLC, it will be moved to the minimum In-range distance for safety reasons</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em><span class="underline">End Control:</span></em></strong></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 36%;">
+<col style="width: 32%;">
+<col style="width: 32%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>1<sup>st</sup> digit: Frog Jump, Freeze HC, End Param</strong></th>
+<th class="tableblock halign-left valign-top"><strong>2<sup>nd</sup> digit: Not used</strong></th>
+<th class="tableblock halign-left valign-top"><strong>3<sup>rd</sup> digit: Not Used</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = All Function disable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = All Function disable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = All Function disable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit0 = 1 = Frog Jump</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit0 = 1 = Beam OFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit1 = 1 = Freeze HC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit2 = 1 = End Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For more information refer <strong><em>“Laser Parameters in DIN program”</em></strong> manual.</p>
+</div>
+</div>
+</div>

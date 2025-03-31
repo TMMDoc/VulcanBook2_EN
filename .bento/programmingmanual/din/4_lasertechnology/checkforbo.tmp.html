@@ -1,0 +1,22 @@
+<div class="paragraph">
+<p>The outer boundary run of the job can be checked for the current work offset, if required the offset can be changed:
+The check for activation of Bound program is defined internally as follows:</p>
+</div>
+<div class="paragraph">
+<p><strong><em>#globdef</em></strong> <em>CheckBoundPrg G20 X65535 E46</em>
+If the Outer Bound program is selected, the Q-bit 46 (E46) will be activated in PLC.
+So, when the main program is started, it will jump to Block number N65535 (it is the maximum value) to run the outer bound program.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: CheckBoundPrg</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>This function will be useful to check the Job will be fit into the sheet</em></strong></p>
+</li>
+<li>
+<p><strong><em>For longer jobs, possible to do the marking at the corners with Special parameter</em></strong></p>
+</li>
+</ul>
+</div>

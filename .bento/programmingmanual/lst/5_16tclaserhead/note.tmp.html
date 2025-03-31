@@ -1,0 +1,57 @@
+<div class="paragraph">
+<p>The TC_LASER_HEAD cycle only applies to the TruLaser series 7000 and to the TruLaser 8000.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong>
+With the TC_LASER_HEAD cycle, the program-specific laser cutting head table is called up in the NC program. The laser cutting head table defines which cutting heads are active and with what distance (in X direction) both cutting heads move.
+The TC_LASER_HEAD cycle is always linked with a programspecific laser cutting head table. Its content is transferred from the programming system to the control system using the NC program:
+=
+TC_LASER_HEAD ("Laser cutting head table")
+■ Self-holding (modal) operation.
+■ Must be programmed before the first travel motion and after TC_SHEET_LOAD.
+■ Must always be programmed if head mode (single or twohead mode) or the distance of the cutting heads changes to each other.
+■ Must be programmed in the NC program at all places where a program can be reentered.</p>
+</div>
+<div class="paragraph">
+<p><sup>■</sup> The table is called up using <strong>LHT</strong> for <strong>L</strong>ASER <strong>H</strong>EAD <strong>T</strong>ABLE and a running number in the NC program; and must be specified in brackets with quotation marks, e.g. ("LHT-1").</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N110 a|
+TC_SHEET_TECH ("SHT-1")
+|N120 a|
+TC_SHEET_LOAD ("SHL-1")
+Pallet change
+|N130 a|
+TC_LASER_HEAD ("LHT-1")
+Activating cutting heads
+|N140 a|
+X500 Y300
+Positioning motion
+|N150 a|
+TC_LASER_ON(1,"T2D-5102"
+,10,100)
+Laser on
+|&#8230;&#8203; a|
+X&#8230;&#8203; Y&#8230;&#8203;
+Contour machining
+|N200 a|
+TC_LASER_OFF(1)
+Laser OFF
+=</p>
+</div>

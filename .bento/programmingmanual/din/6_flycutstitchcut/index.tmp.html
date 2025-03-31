@@ -1,0 +1,9 @@
+<div class="paragraph">
+<p>Fly Cut is cutting without piercing with constant speed. The piercing is done on the fly and the advantage is that the cutting times of thin sheet metal can noticeably be reduced.
+Fly cut is a time-sensitive function and works with a so-called quick output to activate / deactivate the laser. The quick output is written in the DIN program and has a predefined address in the process of the controller. Fly Cut uses the first output of the particular output module as default.
+Furthermore, the cutting results can be improved distinctly by the delayed activation / deactivation of the laser. This can be achieved through the call of the output signal handler (G222 V7 I=P1302 J=P1303 E0, via. 9400.zyk) and the definition of the delay time in the technology table (LPG ON delay, LPG OFF delay). The Fly Cut need to be activated in the “CM” – cutting method, refer above.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Syntax: Q0=1 / Q0=0 (Laser active/deactive)</em></strong>
+Refer Chapter 7, for detailed example of Fly cut program.</p>
+</div>

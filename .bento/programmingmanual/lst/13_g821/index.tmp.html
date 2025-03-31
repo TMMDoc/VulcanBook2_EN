@@ -1,0 +1,132 @@
+<div class="paragraph">
+<p><strong>Definition</strong> Defining programmable, contour related microjoints.
+With this G function, the NC block within the contour is marked by setting a microjoint. The microjoint can be set within the contour or at the end of the contour.
+If the microjoint is set within the contour, then piercing is automatically renewed.</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Restrictions</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming Example</strong>
+Restrictions for microjoints within the contour:
+■ Special forms of piercing, such as the "back-step", for example, are not supported. This is due to the approach procedure not being possible afterwards in the contour.
+■ Approaching with reduced cutting parameters and subsequent switching to normal parameters is not possible.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>
+Depending on the machine, special shapes are possible via the TC_LEAD_IN cycle.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>
+The G821 function is assigned to a group of G commands. Only one G command may be used from this group within an NC block. The G commands belong to this group G820 – G829.
+Is considered if programmed microjoints are activated or deactivated via the microjoint table.
+Is not activated in the microjoint table as default.
+Standard: 0 = not activated; 1 = activated.
+Is written into the contour&#8217;s NC block, at the end of which the microjoint is to be set.
+Is immediately effective after activation if the laser cutting head within the positioning motion is located between two contours. If the laser cutting head is, however, found directly at the machining of a contour, then the function only becomes effective for the next contour machining.
+Should the function be deactivated when a contour is being machined, then another microjoint will be set in this contour. The following contour is machined without a microjoint. If the machining head is found between two contours within a positioning motion, then the following contour will be machined without a microjoint.
+|
+| |Programmed microjoints at the end of the contour: | |</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> | a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N70 | a|
+TC_MICROJOINT ("MJT1")
+|&#8230;&#8203; | a|
+|N200 | a|
+TC_LASER_ON(1,"4711",
+10,100)
+Laser on
+|N210 | a|
+G02 X20 Y60 J-10 G821
+Full circle with microjoint at the end of the contour
+|N220 | a|
+TC_LASER_OFF(1)
+Laser OFF
+|&#8230;&#8203; | a|
+|N400 | a|
+TC_LASER_ON(1,"4711",
+10,100)
+Laser on</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> | a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N410 | a|
+G02 X40 Y10 J-10
+Oblong
+|N420 | a|
+G01 X20 Y10
+|N430 | a|
+G02 X20 Y30 J10 G821
+Oblong hole with microjoint at the end of the contour
+|N440 | a|
+TC_LASER_OFF(1)
+Laser OFF
+=
+Tab. 5-30
+Programmed microjoints in the contour:</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|&#8230;&#8203; a|
+|N110 a|
+TC_LEAD_IN("LIT-1",
+T_LEFT)
+|N200 a|
+TC_LASER_ON(1,"4711",
+10,100)
+Laser on
+|N210 a|
+G02 X20 Y40 J-10 G821
+1. Semicircle of full circle with microjoint within the contour
+|N220 a|
+G02 X20 Y60 J10
+2. Semicircle of full circle without microjoint
+|N230 a|
+TC_LASER_OFF(1)
+Laser OFF
+|&#8230;&#8203; a|
+|N400 a|
+TC_LASER_ON(1,"4711",
+10,100)
+Laser on
+|N410 a|
+G01 X40 Y30
+Oblong
+|N420 a|
+G02 X40 Y10 J-10 G821
+1. Part of the oblong hole with microjoint within the contour
+|N430 a|
+G01 X20 Y10 J10 G821
+|N430 a|
+G02 X20 Y30 J10
+|N450 a|
+TC_LASER_OFF(1)
+Laser OFF
+=
+Tab. 5-31</p>
+</div>

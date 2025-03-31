@@ -1,0 +1,142 @@
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_t">T)</a></li>
+<li><a href="#_example">Example</a></li>
+<li><a href="#_example_2">Example</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Contour change</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Correction direction</strong>
+Kerf correction enables the machining of a part-related program on an equidistant to the programmed path. A path with a constant distance to the programmed contour is approached.</p>
+</div>
+<div class="paragraph">
+<p><strong>5.1 TC_LASERCORR_ON</strong>
+Activating the kerf correction.
+The TC_LASERCORR_ON cycle call-up is called up by using a parameter in the NC program:
+TC_LASERCORR_ON (Correction direction)
+■ Is programmed after TC_LASER_ON is called up.
+■ The following NC block must be a linear block (G01). The correction must be retracted on a linear movement.
+■ The tool path of the laser is calculated from the "kerf" value from the technology table. The kerf is derived from the cutting parameters of TC_LASER_ON.
+■ Is deleted by TC_LASER_OFF (Beam OFF, automatic switch off of the kerf correction and establishment of the last programmed position of the laser cutting head).
+Kerf correction does not have to be switched off if a contour change with a modified kerf is to be performed on a correction which has already been extended. A TC_LASER_ON call with corresponding cutting type need only be programmed. The new correction is corrected linearly in the subsequent motion block for the entire block.
+The kerf correction is carried out to the left or right of the programmed contour, depending on the set parameters.
+=
+Kerf correction</p>
+</div>
+<div class="paragraph">
+<p><strong>TC_LASERCORR_ON(T_LEF</strong> Activation of the kerf correction to left of the contour:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_t">T)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Contour of workpiece
+Laser beam
+Fig. 5-4</p>
+</div>
+<div class="paragraph">
+<p><strong>TC_LASERCORR_ON(T_RIG</strong> Activation of kerf correction to the right of the contour: <strong>HT)</strong>
+Contour of workpiece
+Laser beam
+Fig. 5-5</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N100 a|
+G01 X500 Y100
+Positioning motion.
+|N110 a|
+TC_LASER_ON(1,"1755",
+10,100)
+Laser ON.
+|N120 a|
+TC_LASER-
+CORR_ON(T_LEFT)
+Activation of the kerf correction to left of the contour.
+|N130 a|
+G01 X400 Y100
+Correction extension.
+|N140 a|
+G03 X500 Y200 I100
+Contour processing.
+=</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example">Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kerf correction</p>
+</div>
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Block</strong> a|</p>
+</div>
+<div class="paragraph">
+<p><strong>NC program</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Description</strong>
+|N150 a|
+TC_LASER_ON(1,"1755",
+10,110)
+Contour change.
+|N160 a|
+G02 X450 Y150 I-50
+Modification of correction in the first travel block.
+|N170 a|
+G03 X400 Y100 J-50
+|
+|N180 a|
+TC_LASER_OFF(1)
+Laser OFF, switching off of kerf correction and retraction of correction.
+|N190 a|
+Active G function.
+=</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_2">Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tab. 5-20
+Kerf correction</p>
+</div>
+<div class="paragraph">
+<p><strong>6. Overshoot height</strong></p>
+</div>
+</div>
+</div>

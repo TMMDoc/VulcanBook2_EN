@@ -1,0 +1,54 @@
+<div class="paragraph">
+<p>=</p>
+</div>
+<div class="paragraph">
+<p><strong>Definition</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Programming</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Laser method</strong>
+Depending on the parameters entered, the following machine commands are executed with the TC_LASER_OFF cycle call-up:
+■ Switch off the laser beam.
+■ Switch off the cutting gas.
+■ Position the Z axis.
+The TC_LASER_OFF cycle is called up with a cycle parameter in the NC program:
+TC_LASER_OFF(Laser method)
+The following TC_LASER_OFF cycles are available:</p>
+</div>
+<div class="paragraph">
+<p>|<strong>Laser method</strong> | a|</p>
+</div>
+<div class="paragraph">
+<p><strong>Functions</strong>
+|1 | a|
+Beam OFF, Z axis at overshoot height (standard overshoot height = 40 mm).
+|2 | a|
+Beam OFF, high voltage OFF, Z axis at home position.
+|3 | a|
+Corresponds to method 1.
+|4 | a|
+Beam OFF, Z axis remains at processing clearance (at piercing height for the following piercings / at cutting height for the following cuts).
+|6 | a|
+In the case of RotoLas: Laser beam OFF, Z axis to overtravel height (in relation to the outside diameter).
+|10 | a|
+Beam OFF, preparation for hard Microweld.
+|11 | a|
+Beam OFF, preparation for soft Microweld.
+=
+Tab. 5-8
+The laser methods are used as follows:</p>
+</div>
+<div class="paragraph">
+<p>■ If <strong>Laser method 1</strong> is programmed, the overtravel height which the Z axis is to approach must previously be programmed with TC_POS_LEVEL (TruLaser series 7000: the cutting heads taking part in the cutting process). This method is used to switch off the laser beam after a processed part and to position the next part.</p>
+</div>
+<div class="paragraph">
+<p>■ <strong>Laser method 2</strong> is used to switch off the laser beam at the end of part programming and to move the Z axis to the home position.</p>
+</div>
+<div class="paragraph">
+<p><sup>■</sup> <strong>Laser method 3</strong> corresponds to <strong>Laser method 1</strong>.</p>
+</div>
+<div class="paragraph">
+<p>■ <strong>Laser method 4</strong> is used for "common cuts" processing and for SprintLine. Under no circumstances may a hole or formed section be moved over during positioning.</p>
+</div>
